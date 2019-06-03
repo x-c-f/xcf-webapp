@@ -1,0 +1,771 @@
+{
+  "report":[
+    {
+      "uuid":"46f38d96-5d8a-4fcc-813a-ae510d473ff7",
+      "errorCategory":{
+        "constraintID":"d1e1086",
+        "title":"Styling references",
+        "shortUserDesc":"The used style(s) must refer to (an) existing\n                style(s).",
+        "longUserDesc":"The style attribute refers to one or more style element which\n                define(s) the formatting of the subtitle text. Referenced style elements must be\n                descendants of a styling element.",
+        "specs":[
+          {
+            "name":"Timed Text Markup Language 1 (TTML1) (Second Edition), Version 2013-09-24",
+            "nameAcronym":"TTML1",
+            "text":"If specified, the value of a style attribute must adhere to the IDREFS\n                    data type [...], and, furthermore, each IDREF must reference a style element\n                    which has a styling element as an ancestor.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 8.2.1",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml1\/#style-attribute-style"
+          },
+          {
+            "name":"Timed Text Markup Language 2 (TTML2) CR, Version 2018-03-13",
+            "nameAcronym":"TTML2 (Beta)",
+            "text":"If specified, the value of a style attribute must adhere to the IDREFS\n                    data type [...], and, furthermore, each IDREF must reference a style element\n                    which has a styling element as an ancestor.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 10.2.1",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml2\/#style-attribute-style"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1), Version 2016-04-21",
+            "nameAcronym":"IMSC1 Common",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted in the profile; SHALL NOT include any vocabulary, syntax or attribute\n                value associated with a Feature or Extension whose disposition is prohibited in the\n                profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1) - Text\n                Profile, Version 2016-04-21",
+            "nameAcronym":"IMSC1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#text-profile"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1), Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1 Common",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1) - Text\n                Profile, Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#text-profile"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1 Common (Beta)",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1 - Text Profile, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1-Text (Beta)",
+            "text":"The Text Profile consists of Sections 6. Supported Features and Extensions, 7.\n                Common Provisions and 8. Text Profile Provisions.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#text-profile"
+          },
+          {
+            "name":"Netflix: Timed Text Style Guide: General Requirements, Version 2016-11-16",
+            "nameAcronym":"Netflix-General",
+            "text":"Subtitle and SDH files for all languages must be delivered in a TTML (.dfxp or\n                .xml) format, except for Japanese, which must be delivered in Videotron Lambda Cap\n                format.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 2",
+            "uri":"https:\/\/backlothelp.netflix.com\/hc\/en-us\/articles\/215758617-Timed-Text-Style-Guide-General-Requirements"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"Incorrect ID refs",
+            "longDesc":"Incorrect ID references",
+            "type":"Error type"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The style attribute refers to an existing style.\n                Error Information: The value of the attribute 'style' is 'textAlignCentre'.",
+              "messageAssertion":"The style attribute refers to an existing style.",
+              "messageDiagnosticsAll":"The value of the attribute 'style' is 'textAlignCentre'."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][8]\/@style",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[8]\/@style",
+              "preview":"<tt:p begin=\"00:00:29.440\" end=\"00:00:33.120\" style=\"textAlignCentre\" region=\"bottomAligned\" xml:id=\"sub7\">\n            <tt:span style=\"GreenOnBlack doubleHeight\">Whoaaa!<\/tt:span>\n         <\/tt:p>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"8290fd93-c843-4a0c-ae40-c4eb4f75ed87",
+      "errorCategory":{
+        "constraintID":"d1e2616",
+        "title":"No loop in style references",
+        "shortUserDesc":"There shall not be a loop in style\n                references.",
+        "longUserDesc":"A loop in style references is present if it is possible, starting\n                from a style S, to create a chain of styles that ends with S again, whereby each\n                style in the chain refers to the following one via the style attribute. Such a loop\n                is not allowed, as style property inheritance can never be resolved to a final\n                value.",
+        "specs":[
+          {
+            "name":"Timed Text Markup Language 1 (TTML1) (Second Edition), Version 2013-09-24",
+            "nameAcronym":"TTML1",
+            "text":"A loop in a sequence of chained style references must be considered an\n                    error.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 8.4.1.3",
+            "uri":"https:\/\/www.w3.org\/TR\/ttaf1-dfxp\/#semantics-style-association-chained-referential"
+          },
+          {
+            "name":"Timed Text Markup Language 2 (TTML2) CR, Version 2018-03-13",
+            "nameAcronym":"TTML2 (Beta)",
+            "text":"A loop in a sequence of chained style references must be considered an\n                    error.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 10.4.1.3",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml2\/#semantics-style-association-chained-referential"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1), Version 2016-04-21",
+            "nameAcronym":"IMSC1 Common",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted in the profile; SHALL NOT include any vocabulary, syntax or attribute\n                value associated with a Feature or Extension whose disposition is prohibited in the\n                profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1) - Text\n                Profile, Version 2016-04-21",
+            "nameAcronym":"IMSC1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#text-profile"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1), Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1 Common",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1) - Text\n                Profile, Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#text-profile"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1 Common (Beta)",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1 - Text Profile, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1-Text (Beta)",
+            "text":"The Text Profile consists of Sections 6. Supported Features and Extensions, 7.\n                Common Provisions and 8. Text Profile Provisions.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#text-profile"
+          },
+          {
+            "name":"Netflix: Timed Text Style Guide: General Requirements, Version 2016-11-16",
+            "nameAcronym":"Netflix-General",
+            "text":"Subtitle and SDH files for all languages must be delivered in a TTML (.dfxp or\n                .xml) format, except for Japanese, which must be delivered in Videotron Lambda Cap\n                format.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 2",
+            "uri":"https:\/\/backlothelp.netflix.com\/hc\/en-us\/articles\/215758617-Timed-Text-Style-Guide-General-Requirements"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"Inconsistent values",
+            "longDesc":"Inconsistent values",
+            "type":"Error type"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: There is no loop in the style references.\n                Error Information: The affected 'tt:style' element has the ID 'doubleHeight'.",
+              "messageAssertion":"There is no loop in the style references.",
+              "messageDiagnosticsAll":"The affected 'tt:style' element has the ID 'doubleHeight'."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:head[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:styling[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:style[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][7]",
+              "humanXPATH":"\/tt:tt\/tt:head\/tt:styling\/tt:style[7]",
+              "preview":"<tt:style xml:id=\"doubleHeight\" tts:fontSize=\"200%\" style=\"loopStyle\"\/>"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: There is no loop in the style references.\n                Error Information: The affected 'tt:style' element has the ID 'loopStyle'.",
+              "messageAssertion":"There is no loop in the style references.",
+              "messageDiagnosticsAll":"The affected 'tt:style' element has the ID 'loopStyle'."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:head[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:styling[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:style[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][8]",
+              "humanXPATH":"\/tt:tt\/tt:head\/tt:styling\/tt:style[8]",
+              "preview":"<tt:style xml:id=\"loopStyle\" style=\"secondLoopStyle\"\/>"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: There is no loop in the style references.\n                Error Information: The affected 'tt:style' element has the ID 'secondLoopStyle'.",
+              "messageAssertion":"There is no loop in the style references.",
+              "messageDiagnosticsAll":"The affected 'tt:style' element has the ID 'secondLoopStyle'."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:head[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:styling[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:style[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][9]",
+              "humanXPATH":"\/tt:tt\/tt:head\/tt:styling\/tt:style[9]",
+              "preview":"<tt:style xml:id=\"secondLoopStyle\" style=\"doubleHeight\"\/>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"4c8a049e-53a1-4bef-acae-4b3a137f629e",
+      "errorCategory":{
+        "constraintID":"hlm_gvk_jz",
+        "title":"Undefined TTML attribute (TTML1)",
+        "shortUserDesc":"The attribute is within a TTML namespace, but it is not defined by\n                the specification.",
+        "longUserDesc":"As the attribute is not defined by the specification, TTML\n                processors\/renderers may not have implemented support for the\n                attribute.",
+        "specs":[
+          {
+            "name":"Timed Text Markup Language 1 (TTML1) (Second Edition), Version 2013-09-24",
+            "nameAcronym":"TTML1",
+            "text":"[The attribute vocabulary specified for use with the core vocabulary\n                    catalog is enumerated in] Table 5 - Attribute Vocabulary.",
+            "errorLevel":"INFO",
+            "section":"Chapter Table 5",
+            "uri":"https:\/\/www.w3.org\/TR\/ttaf1-dfxp\/#attribute-vocab-table"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1), Version 2016-04-21",
+            "nameAcronym":"IMSC1 Common",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted in the profile; SHALL NOT include any vocabulary, syntax or attribute\n                value associated with a Feature or Extension whose disposition is prohibited in the\n                profile.",
+            "errorLevel":"INFO",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1) - Text\n                Profile, Version 2016-04-21",
+            "nameAcronym":"IMSC1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"INFO",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#text-profile"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1), Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1 Common",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
+            "errorLevel":"INFO",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1) - Text\n                Profile, Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"INFO",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#text-profile"
+          },
+          {
+            "name":"Netflix: Timed Text Style Guide: General Requirements, Version 2016-11-16",
+            "nameAcronym":"Netflix-General",
+            "text":"Subtitle and SDH files for all languages must be delivered in a TTML (.dfxp or\n                .xml) format, except for Japanese, which must be delivered in Videotron Lambda Cap\n                format.",
+            "errorLevel":"INFO",
+            "section":"Chapter 2",
+            "uri":"https:\/\/backlothelp.netflix.com\/hc\/en-us\/articles\/215758617-Timed-Text-Style-Guide-General-Requirements"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"Prohibited vocabulary",
+            "longDesc":"Prohibited vocabulary",
+            "type":"Error type"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: All TT Style namespace attributes are defined by the TTML specification.\n                Error Information: The attribute 'tts:unknown_attribute' appears on the element 'tt:style'.",
+              "messageAssertion":"All TT Style namespace attributes are defined by the TTML specification.",
+              "messageDiagnosticsAll":"The attribute 'tts:unknown_attribute' appears on the element 'tt:style'."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:head[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:styling[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:style[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][4]\/@*[local-name()='unknown_attribute' and namespace-uri()='http:\/\/www.w3.org\/ns\/ttml#styling']",
+              "humanXPATH":"\/tt:tt\/tt:head\/tt:styling\/tt:style[4]\/@tts:unknown_attribute",
+              "preview":"<tt:style xml:id=\"textAlignLeft\" tts:textAlign=\"start\" tts:unknown_attribute=\"100%\"\/>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"2f789537-5961-4ae1-b978-5cffa19baa29",
+      "errorCategory":{
+        "constraintID":"hlm_gvk_jza",
+        "title":"Undefined TTML attribute (TTML2)",
+        "shortUserDesc":"The attribute is within a TTML namespace, but it is not defined by\n                the specification.",
+        "longUserDesc":"As the attribute is not defined by the specification, TTML\n                processors\/renderers may not have implemented support for the\n                attribute.",
+        "specs":[
+          {
+            "name":"Timed Text Markup Language 2 (TTML2) CR, Version 2018-03-13",
+            "nameAcronym":"TTML2 (Beta)",
+            "text":"[TThe attribute vocabulary specified for use with the core vocabulary\n                    catalog is enumerated in] Table 5-5 - Attribute Vocabulary.",
+            "errorLevel":"INFO",
+            "section":"Chapter Table 5-5",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml2\/#attribute-vocab-table"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1 Common (Beta)",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
+            "errorLevel":"INFO",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1 - Text Profile, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1-Text (Beta)",
+            "text":"The Text Profile consists of Sections 6. Supported Features and Extensions, 7.\n                Common Provisions and 8. Text Profile Provisions.",
+            "errorLevel":"INFO",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#text-profile"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"Prohibited vocabulary",
+            "longDesc":"Prohibited vocabulary",
+            "type":"Error type"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: All TT Style namespace attributes are defined by the TTML specification.\n                Error Information: The attribute 'tts:unknown_attribute' appears on the element 'tt:style'.",
+              "messageAssertion":"All TT Style namespace attributes are defined by the TTML specification.",
+              "messageDiagnosticsAll":"The attribute 'tts:unknown_attribute' appears on the element 'tt:style'."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:head[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:styling[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:style[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][4]\/@*[local-name()='unknown_attribute' and namespace-uri()='http:\/\/www.w3.org\/ns\/ttml#styling']",
+              "humanXPATH":"\/tt:tt\/tt:head\/tt:styling\/tt:style[4]\/@tts:unknown_attribute",
+              "preview":"<tt:style xml:id=\"textAlignLeft\" tts:textAlign=\"start\" tts:unknown_attribute=\"100%\"\/>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"f699b1c8-28d5-46fb-bc7e-27028264e589",
+      "errorCategory":{
+        "constraintID":"w0ab1b5d215",
+        "title":"Document encoding present",
+        "shortUserDesc":"It is common practice that a document encoding is specified in the\n                XML declaration. Without this information the encoding can often not be determined\n                and the constraints regarding document encoding (e.g. to just use UTF-8) could not\n                be checked.",
+        "longUserDesc":"",
+        "specs":[
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1), Version 2016-04-21",
+            "nameAcronym":"IMSC1 Common",
+            "text":"A Document Instance SHALL use UTF-8 character encoding as specified in\n                    UNICODE.",
+            "errorLevel":"INFO",
+            "section":"Chapter 6.1",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#document-encoding"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1), Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1 Common",
+            "text":"A Document Instance SHALL use UTF-8 character encoding as specified in\n                    UNICODE.",
+            "errorLevel":"INFO",
+            "section":"Chapter 6.1",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#document-encoding"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1 Common (Beta)",
+            "text":"A Document Instance SHALL be [...] using the UTF-8 character encoding as\n                    specified in [UNICODE].",
+            "errorLevel":"INFO",
+            "section":"Chapter 7.1",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#document-encoding"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1) - Text\n                Profile, Version 2016-04-21",
+            "nameAcronym":"IMSC1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"INFO",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#text-profile"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1) - Text\n                Profile, Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"INFO",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#text-profile"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1 - Text Profile, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1-Text (Beta)",
+            "text":"The Text Profile consists of Sections 6. Supported Features and Extensions, 7.\n                Common Provisions and 8. Text Profile Provisions.",
+            "errorLevel":"INFO",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#text-profile"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"Missing vocabulary",
+            "longDesc":"Missing vocabulary",
+            "type":"Error type"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: A document encoding is specified in the XML declaration.",
+              "messageAssertion":"A document encoding is specified in the XML declaration."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt",
+              "preview":"<tt:tt ttp:timeBase=\"media\" xml:lang=\"de\" ttp:cellResolution=\"50 30\" xml:space=\"default\" ttp:frameRate=\"50\">\n   <tt:head>\n      <tt:metadata>\n         <ebuttm:documentMetadata>\n            <ebuttm:conformsToStandard>urn:ebu:tt:distribution:2014-01<\/ebuttm:conformsToStandard>\n            <ebuttm:conf[…]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"ea96ea6f-c966-4a62-b400-649efd830b34",
+      "errorCategory":{
+        "constraintID":"w0ab1b5d227",
+        "title":"tts:fontSize value",
+        "shortUserDesc":"The tts:fontSize attribute must be set to\n                \"100%\".",
+        "longUserDesc":"",
+        "specs":[
+          {
+            "name":"Netflix: Timed Text Style Guide: General Requirements, Version 2016-11-16",
+            "nameAcronym":"Netflix-General",
+            "text":"tts:fontSize shall be defined as 100%.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 13",
+            "uri":"https:\/\/backlothelp.netflix.com\/hc\/en-us\/articles\/215758617-Timed-Text-Style-Guide-General-Requirements"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"Prohibited values",
+            "longDesc":"Prohibited values",
+            "type":"Error type"
+          },
+          {
+            "shortDesc":"Styling\/Positioning",
+            "longDesc":"Styling\/Positioning related issues",
+            "type":"Editorial constraints"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:fontSize attribute is set to \"100%\".",
+              "messageAssertion":"The tts:fontSize attribute is set to \"100%\"."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][2]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[2]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:02.000\" end=\"00:00:04.000\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub1\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">Tears of Steel (part)<\/tt:span>\n         <\/tt:p>"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:fontSize attribute is set to \"100%\".",
+              "messageAssertion":"The tts:fontSize attribute is set to \"100%\"."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][3]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[3]\/tt:span[1]",
+              "preview":"<tt:p begin=\"00:00:13.560\" end=\"00:00:18.640\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub2\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">But that's no reason to<\/tt:span>\n            <tt:br\/>\n            <tt:span style=\"WhiteOnBlack doubleHeight\">destroy the world.<\/tt:span[…]"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:fontSize attribute is set to \"100%\".",
+              "messageAssertion":"The tts:fontSize attribute is set to \"100%\"."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][3]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][2]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[3]\/tt:span[2]",
+              "preview":"<tt:p begin=\"00:00:13.560\" end=\"00:00:18.640\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub2\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">But that's no reason to<\/tt:span>\n            <tt:br\/>\n            <tt:span style=\"WhiteOnBlack doubleHeight\">destroy the world.<\/tt:span[…]"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:fontSize attribute is set to \"100%\".",
+              "messageAssertion":"The tts:fontSize attribute is set to \"100%\"."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][4]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[4]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:18.800\" end=\"00:00:21.040\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub3\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">Why does he do this?<\/tt:span>\n         <\/tt:p>"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:fontSize attribute is set to \"100%\".",
+              "messageAssertion":"The tts:fontSize attribute is set to \"100%\"."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][5]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[5]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:21.200\" end=\"00:00:24.160\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub4\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">We already tried that one!<\/tt:span>\n         <\/tt:p>"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:fontSize attribute is set to \"100%\".",
+              "messageAssertion":"The tts:fontSize attribute is set to \"100%\"."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][6]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[6]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:24.360\" end=\"00:00:26.160\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub5\">\n            <tt:span style=\"GreenOnBlack doubleHeight\">Abort!<\/tt:span>\n         <\/tt:p>"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:fontSize attribute is set to \"100%\".",
+              "messageAssertion":"The tts:fontSize attribute is set to \"100%\"."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][7]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[7]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:26.320\" end=\"00:00:29.280\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub6\">\n            <tt:span style=\"GreenOnBlack doubleHeight\">Cut!<\/tt:span>\n         <\/tt:p>"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:fontSize attribute is set to \"100%\".",
+              "messageAssertion":"The tts:fontSize attribute is set to \"100%\"."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][8]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[8]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:29.440\" end=\"00:00:33.120\" style=\"textAlignCentre\" region=\"bottomAligned\" xml:id=\"sub7\">\n            <tt:span style=\"GreenOnBlack doubleHeight\">Whoaaa!<\/tt:span>\n         <\/tt:p>"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:fontSize attribute is set to \"100%\".",
+              "messageAssertion":"The tts:fontSize attribute is set to \"100%\"."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][9]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[9]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:33.280\" end=\"00:00:36.840\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub8\">\n            <tt:span style=\"GreenOnBlack doubleHeight\">Nooooo!<\/tt:span>\n         <\/tt:p>"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:fontSize attribute is set to \"100%\".",
+              "messageAssertion":"The tts:fontSize attribute is set to \"100%\"."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][10]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[10]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:37.040\" end=\"00:00:39.320\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub9\">\n            <tt:span style=\"GreenOnBlack doubleHeight\">You broke my heart.<\/tt:span>\n         <\/tt:p>"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:fontSize attribute is set to \"100%\".",
+              "messageAssertion":"The tts:fontSize attribute is set to \"100%\"."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][11]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[11]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:39.520\" end=\"00:00:42.560\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub10\">\n            <tt:span style=\"GreenOnBlack doubleHeight\">I know.<\/tt:span>\n         <\/tt:p>"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:fontSize attribute is set to \"100%\".",
+              "messageAssertion":"The tts:fontSize attribute is set to \"100%\"."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][12]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[12]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:42.760\" end=\"00:00:46.720\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub11\">\n            <tt:span style=\"GreenOnBlack doubleHeight\">You forgot me on earth.<\/tt:span>\n         <\/tt:p>"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:fontSize attribute is set to \"100%\".",
+              "messageAssertion":"The tts:fontSize attribute is set to \"100%\"."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][13]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[13]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:46.880\" end=\"00:00:51.240\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub12\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">I know.<\/tt:span>\n         <\/tt:p>"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:fontSize attribute is set to \"100%\".",
+              "messageAssertion":"The tts:fontSize attribute is set to \"100%\"."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][14]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[14]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:51.400\" end=\"00:00:55.360\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub13\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">I should just crush you.<\/tt:span>\n         <\/tt:p>"
+            }
+          },
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:fontSize attribute is set to \"100%\".",
+              "messageAssertion":"The tts:fontSize attribute is set to \"100%\"."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][15]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[15]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:58.520\" end=\"00:01:02.960\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub14\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">I'm sorry.<\/tt:span>\n         <\/tt:p>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"99d6173a-0405-46e0-a2db-c36e6d38e732",
+      "errorCategory":{
+        "constraintID":"NO_CONSTRAINT_ID_d14e4",
+        "title":"TTML1 XSD validation: There is no ID\/IDREF binding for IDREF 'textAlignCentre'",
+        "shortUserDesc":"The XSD validation returns the following status: 'invalid'",
+        "specs":[
+          {
+            "name":"Timed Text Markup Language 1 (TTML1) (Second Edition), Version 2013-09-24",
+            "nameAcronym":"TTML1",
+            "errorLevel":"ERROR"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1), Version 2016-04-21",
+            "nameAcronym":"IMSC1 Common",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted in the profile; SHALL NOT include any vocabulary, syntax or attribute\n                value associated with a Feature or Extension whose disposition is prohibited in the\n                profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1), Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1 Common",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1) - Text\n                Profile, Version 2016-04-21",
+            "nameAcronym":"IMSC1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#text-profile"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1) - Text\n                Profile, Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#text-profile"
+          },
+          {
+            "name":"Netflix: Timed Text Style Guide: General Requirements, Version 2016-11-16",
+            "nameAcronym":"Netflix-General",
+            "text":"Subtitle and SDH files for all languages must be delivered in a TTML (.dfxp or\n                .xml) format, except for Japanese, which must be delivered in Videotron Lambda Cap\n                format.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 2",
+            "uri":"https:\/\/backlothelp.netflix.com\/hc\/en-us\/articles\/215758617-Timed-Text-Style-Guide-General-Requirements"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"XML Schema validation error",
+            "longDesc":"XML Schema validation error",
+            "type":"Schema Error"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n                                        Assertion: The document validates against the XML Schema definition.\n                                        Error Information: Line 82, column 9: There is no ID\/IDREF binding for IDREF 'textAlignCentre'",
+              "messageAssertion":"The document validates against the XML Schema definition.",
+              "messageDiagnosticsAll":"Line 82, column 9: There is no ID\/IDREF binding for IDREF 'textAlignCentre'"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"76a76060-aba3-435f-be1d-f93df0ae1bc9",
+      "errorCategory":{
+        "constraintID":"NO_CONSTRAINT_ID_d16e4",
+        "title":"TTML2 (Beta) XSD validation: There is no ID\/IDREF binding for IDREF 'textAlignCentre'",
+        "shortUserDesc":"The XSD validation returns the following status: 'invalid'",
+        "specs":[
+          {
+            "name":"Timed Text Markup Language 2 (TTML2) CR, Version 2018-03-13",
+            "nameAcronym":"TTML2 (Beta)",
+            "errorLevel":"ERROR"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1 Common (Beta)",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1 - Text Profile, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1-Text (Beta)",
+            "text":"The Text Profile consists of Sections 6. Supported Features and Extensions, 7.\n                Common Provisions and 8. Text Profile Provisions.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#text-profile"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"XML Schema validation error",
+            "longDesc":"XML Schema validation error",
+            "type":"Schema Error"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n                                        Assertion: The document validates against the XML Schema definition.\n                                        Error Information: Line 82, column 9: There is no ID\/IDREF binding for IDREF 'textAlignCentre'",
+              "messageAssertion":"The document validates against the XML Schema definition.",
+              "messageDiagnosticsAll":"Line 82, column 9: There is no ID\/IDREF binding for IDREF 'textAlignCentre'"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "filename":"subcheck_imsc1_3.xml",
+  "totalWords":"45",
+  "filesize":"7 KB",
+  "wpm":"59.16"
+}

@@ -1,0 +1,59 @@
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+image: node:latest
+
+stages:
+- build
+- test
+- release
+- deploy
+
+variables:
+  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+  GIT_SUBMODULE_STRATEGY: normal
+
+
+build_vue:
+  stage: build
+  script:
+    - cd frontend
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - frontend/dist
+    expire_in: 1d
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+  cache:
+    paths:
+    - frontend/node_modules/
+
+
+release:
+  stage: release
+  image: docker:latest
+  tags:
+    - docker
+  services:
+    - docker:dind
+  only:
+  - master
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY_IMAGE
+    - docker build -t $IMAGE_TAG .
+    - docker push $IMAGE_TAG
+release-dev:
+  stage: release
+  image: docker:latest
+  tags:
+    - docker
+  services:
+    - docker:dind
+  only:
+  - dev
+  - beta
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY_IMAGE
+    - docker build -t $IMAGE_TAG .
+    - docker push $IMAGE_TAG

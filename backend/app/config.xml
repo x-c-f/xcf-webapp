@@ -1,0 +1,4 @@
+<config>
+  <xcf-engine>http://files.basex.org/.xcf-application/engine/</xcf-engine>
+  <xcf-rules>http://files.basex.org/.xcf-application/checks/</xcf-rules>
+</config>

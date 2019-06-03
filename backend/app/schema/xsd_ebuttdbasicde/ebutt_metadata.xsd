@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© 2013 Institut für Rundfunktechnik GmbH. -->
+<!-- v1.2 -->
+<!-- This XML Schema corresponds to the proposal for an ARD Online Distribution EBU-TT Profil in the version 1.2  -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ebu:tt:metadata" xmlns:ebuttm="urn:ebu:tt:metadata" xmlns:ebuttdt="urn:ebu:tt:datatypes" targetNamespace="urn:ebu:tt:metadata" elementFormDefault="qualified">
+	<xs:import namespace="urn:ebu:tt:datatypes" schemaLocation="ebutt_datatypes.xsd"/>
+	<xs:element name="documentMetadata">
+		<xs:annotation>
+			<xs:documentation>EBU-TT specific metadata that applies to the whole EBU-TT document.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="documentEbuttVersion">
+					<xs:annotation>
+						<xs:documentation>The version of the EBU-TT standard used by the document instance.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="v1.0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="documentIdentifier" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Identifier for an EBU-TT document that may be used as external reference to an EBU-TT document.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,631 @@
+{
+  "report":[
+    {
+      "uuid":"8e57da6c-3962-4d6d-8f1c-58c507594404",
+      "errorCategory":{
+        "constraintID":"d1e1044",
+        "title":"Region references",
+        "shortUserDesc":"The used region must refer to an existing\n                region.",
+        "longUserDesc":"The region attribute refers to a region element which defines the\n                space in terms of origin and extent, within which the text of a subtitle is\n                displayed.",
+        "specs":[
+          {
+            "name":"Timed Text Markup Language 1 (TTML1) (Second Edition), Version 2013-09-24",
+            "nameAcronym":"TTML1",
+            "text":"If specified, the value of a region attribute must adhere to the IDREF\n                    data type [...], and, furthermore, this IDREF must reference a region element\n                    which has a layout element as an ancestor.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 9.2.1",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml1\/#layout-attribute-region"
+          },
+          {
+            "name":"Timed Text Markup Language 2 (TTML2) CR, Version 2018-03-13",
+            "nameAcronym":"TTML2 (Beta)",
+            "text":"If specified, the value of a region attribute must adhere to the IDREF\n                    data type [...], and, furthermore, this IDREF must reference a region element\n                    which has a layout element as an ancestor.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 11.2.1",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml2\/#layout-attribute-region"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1), Version 2016-04-21",
+            "nameAcronym":"IMSC1 Common",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted in the profile; SHALL NOT include any vocabulary, syntax or attribute\n                value associated with a Feature or Extension whose disposition is prohibited in the\n                profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1) - Text\n                Profile, Version 2016-04-21",
+            "nameAcronym":"IMSC1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#text-profile"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1), Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1 Common",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1) - Text\n                Profile, Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#text-profile"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1 Common (Beta)",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1 - Text Profile, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1-Text (Beta)",
+            "text":"The Text Profile consists of Sections 6. Supported Features and Extensions, 7.\n                Common Provisions and 8. Text Profile Provisions.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#text-profile"
+          },
+          {
+            "name":"Netflix: Timed Text Style Guide: General Requirements, Version 2016-11-16",
+            "nameAcronym":"Netflix-General",
+            "text":"Subtitle and SDH files for all languages must be delivered in a TTML (.dfxp or\n                .xml) format, except for Japanese, which must be delivered in Videotron Lambda Cap\n                format.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 2",
+            "uri":"https:\/\/backlothelp.netflix.com\/hc\/en-us\/articles\/215758617-Timed-Text-Style-Guide-General-Requirements"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"Incorrect ID refs",
+            "longDesc":"Incorrect ID references",
+            "type":"Error type"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The region attribute refers to an existing region.\n                Error Information: The value of the attribute 'region' is 'bottomAlignd'.",
+              "messageAssertion":"The region attribute refers to an existing region.",
+              "messageDiagnosticsAll":"The value of the attribute 'region' is 'bottomAlignd'."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][14]\/@region",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[14]\/@region",
+              "preview":"<tt:p begin=\"00:00:51.400\" end=\"00:00:55.360\" style=\"textAlignCenter\" region=\"bottomAlignd\" xml:id=\"sub13\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">I should just crush you.<\/tt:span>\n         <\/tt:p>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"6d203bcd-75b9-44a7-963e-58b5c90fae55",
+      "errorCategory":{
+        "constraintID":"d1e1126",
+        "title":"Text Profile signalling",
+        "shortUserDesc":"The IMSC1 profile should be signalled.",
+        "longUserDesc":"The used IMSC1 profile should be signalled to indicate the\n                specification conformance of a document. This eases possible further\n                processing.",
+        "specs":[
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1) - Text\n                Profile, Version 2016-04-21",
+            "nameAcronym":"IMSC1-Text",
+            "text":"The ttp:profile attribute SHOULD be present on the tt element and equal to\n                    the designator of the IMSC1 profile to which the Document Instance conforms, and\n                    the ttp:profile element SHOULD NOT be present, unless: the Document Instance\n                    also conforms to EBU-TT-D, in which case the ttp:profile attribute and the\n                    ttp:profile element SHOULD NOT be present, and instead the designator of the\n                    IMSC1 profile to which the Document Instance conforms and the URI\n                    \"urn:ebu:tt:distribution:2014-01\" SHOULD each be carried in an\n                    ebuttm:conformsToStandard element as specified in EBU-TT-D; or the Document\n                    Instance also conforms to ttml10-sdp-us, in which case the ttp:profile attribute\n                    SHOULD NOT be present. ttml10-sdp-us requires that the ttp:profile element be\n                    present and that its use attribute be set to a specified value.",
+            "errorLevel":"WARNING",
+            "section":"Chapter 6.9",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#profile-signaling"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1) - Text\n                Profile, Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1-Text",
+            "text":"The ttp:profile attribute SHOULD be present on the tt element and equal to\n                    the designator of the IMSC1 profile to which the Document Instance conforms, and\n                    the ttp:profile element SHOULD NOT be present, unless: the Document Instance\n                    also conforms to EBU-TT-D, in which case neither the ttp:profile attribute nor\n                    the ttp:profile element are present, and, instead the designator of the IMSC1\n                    profile to which the Document Instance conforms and the URI\n                    \"urn:ebu:tt:distribution:2014-01\" SHOULD each be carried in an\n                    ebuttm:conformsToStandard element as specified in EBU-TT-D and illustrated in\n                    I.2 EBU-TT-D; or the Document Instance also conforms to ttml10-sdp-us, in which\n                    case the ttp:profile attribute is not present and the ttp:profile element is\n                    present, as illustrated in I.3 SDP-US.",
+            "errorLevel":"WARNING",
+            "section":"Chapter 6.9",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#profile-signaling"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"Profile signalling",
+            "longDesc":"Profile signalling",
+            "type":"Error type"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The IMSC1 Text profile should be signalled.",
+              "messageAssertion":"The IMSC1 Text profile should be signalled."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt",
+              "preview":"<tt:tt ttp:timeBase=\"media\" xml:lang=\"de\" ttp:cellResolution=\"50 30\" xml:space=\"default\">\n   <tt:head>\n      <tt:metadata>\n         <ebuttm:documentMetadata>\n            <ebuttm:conformsToStandard>urn:ebu:tt:distribution:2014-01<\/ebuttm:conformsToStandard>\n         <\/ebuttm:documentMetadata>\n      <[…]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"7b2c8e0d-e4e1-4020-bcf5-27ad0170631d",
+      "errorCategory":{
+        "constraintID":"d1e2424",
+        "title":"ebutts:multiRowAlign value",
+        "shortUserDesc":"The value of the ebutts:multiRowAlign attribute must conform to\n                the defined syntax.",
+        "longUserDesc":"The ebutts:multiRowAlign attribute refers to the case that more\n                than one text line is present in a subtitle. It defines the alignment of the\n                subtitles in relation to the specific text line which is rendered with the highest\n                width compared to the other lines. Usually this value corresponds to the value of\n                the more general tts:textAlign attribute or is just set to centered multi row\n                alignment. The allowed values are defined by an enumeration.",
+        "specs":[
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1), Version 2016-04-21",
+            "nameAcronym":"IMSC1 Common",
+            "text":"",
+            "errorLevel":"ERROR",
+            "section":"Chapter F.7",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#multirowalign"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1), Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1 Common",
+            "text":"",
+            "errorLevel":"ERROR",
+            "section":"Chapter F.7",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#multirowalign"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1 Common (Beta)",
+            "text":"",
+            "errorLevel":"ERROR",
+            "section":"Chapter F.7",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#feature-multiRowAlign"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1) - Text\n                Profile, Version 2016-04-21",
+            "nameAcronym":"IMSC1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#text-profile"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1) - Text\n                Profile, Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#text-profile"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1 - Text Profile, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1-Text (Beta)",
+            "text":"The Text Profile consists of Sections 6. Supported Features and Extensions, 7.\n                Common Provisions and 8. Text Profile Provisions.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#text-profile"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"Prohibited values",
+            "longDesc":"Prohibited values",
+            "type":"Error type"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The ebutts:multiRowAlign attribute has one of the following values: 'start', 'center', 'end', 'auto'\n                Error Information: The value of the attribute 'ebutts:multiRowAlign' is 'begin'.",
+              "messageAssertion":"The ebutts:multiRowAlign attribute has one of the following values: 'start', 'center', 'end', 'auto'",
+              "messageDiagnosticsAll":"The value of the attribute 'ebutts:multiRowAlign' is 'begin'."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:head[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:layout[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:region[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/@*[local-name()='multiRowAlign' and namespace-uri()='urn:ebu:tt:style']",
+              "humanXPATH":"\/tt:tt\/tt:head\/tt:layout\/tt:region\/@ebutts:multiRowAlign",
+              "preview":"<tt:region xml:id=\"bottomAligned\" tts:extent=\"80% 80%\" tts:origin=\"10% 10%\" tts:padding=\"0%\" tts:displayAlign=\"after\" tts:writingMode=\"lrtb\" ebutts:multiRowAlign=\"begin\"\/>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"7e02888c-0624-4654-8512-b5755d3dc43a",
+      "errorCategory":{
+        "constraintID":"w0ab1b5d220",
+        "title":"tts:displayAlign usage",
+        "shortUserDesc":"The tts:displayAlign attribute must be used for vertical alignment\n                of subtitles.",
+        "longUserDesc":"",
+        "specs":[
+          {
+            "name":"Netflix: Timed Text Style Guide: General Requirements, Version 2016-11-16",
+            "nameAcronym":"Netflix-General",
+            "text":"Use tts:textAlign and tts:displayAlign for positioning along with static\n                    values for tts:extent and tts:origin.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 13",
+            "uri":"https:\/\/backlothelp.netflix.com\/hc\/en-us\/articles\/215758617-Timed-Text-Style-Guide-General-Requirements"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"Missing vocabulary",
+            "longDesc":"Missing vocabulary",
+            "type":"Error type"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:displayAlign attribute is used for vertical alignment of subtitles.",
+              "messageAssertion":"The tts:displayAlign attribute is used for vertical alignment of subtitles."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][14]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[14]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:51.400\" end=\"00:00:55.360\" style=\"textAlignCenter\" region=\"bottomAlignd\" xml:id=\"sub13\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">I should just crush you.<\/tt:span>\n         <\/tt:p>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"ade8eacd-168b-4742-a6ea-ed10d0d7ff5a",
+      "errorCategory":{
+        "constraintID":"w0ab1b5d221",
+        "title":"tts:origin usage",
+        "shortUserDesc":"The tts:origin attribute must be used for subtitle\n                positioning.",
+        "longUserDesc":"",
+        "specs":[
+          {
+            "name":"Netflix: Timed Text Style Guide: General Requirements, Version 2016-11-16",
+            "nameAcronym":"Netflix-General",
+            "text":"Use tts:textAlign and tts:displayAlign for positioning along with static\n                    values for tts:extent and tts:origin.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 13",
+            "uri":"https:\/\/backlothelp.netflix.com\/hc\/en-us\/articles\/215758617-Timed-Text-Style-Guide-General-Requirements"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"Missing vocabulary",
+            "longDesc":"Missing vocabulary",
+            "type":"Error type"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:origin attribute is used for subtitle positioning.",
+              "messageAssertion":"The tts:origin attribute is used for subtitle positioning."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][14]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[14]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:51.400\" end=\"00:00:55.360\" style=\"textAlignCenter\" region=\"bottomAlignd\" xml:id=\"sub13\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">I should just crush you.<\/tt:span>\n         <\/tt:p>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"d9751eb7-d700-4fed-95d1-5fd41b5a86cb",
+      "errorCategory":{
+        "constraintID":"w0ab1b5d223",
+        "title":"tts:extent usage",
+        "shortUserDesc":"The tts:extent attribute must be used for subtitle\n                positioning.",
+        "longUserDesc":"",
+        "specs":[
+          {
+            "name":"Netflix: Timed Text Style Guide: General Requirements, Version 2016-11-16",
+            "nameAcronym":"Netflix-General",
+            "text":"Use tts:textAlign and tts:displayAlign for positioning along with static\n                    values for tts:extent and tts:origin.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 13",
+            "uri":"https:\/\/backlothelp.netflix.com\/hc\/en-us\/articles\/215758617-Timed-Text-Style-Guide-General-Requirements"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"Missing vocabulary",
+            "longDesc":"Missing vocabulary",
+            "type":"Error type"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The tts:extent attribute is used for subtitle positioning.",
+              "messageAssertion":"The tts:extent attribute is used for subtitle positioning."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][14]\/*:span[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[14]\/tt:span",
+              "preview":"<tt:p begin=\"00:00:51.400\" end=\"00:00:55.360\" style=\"textAlignCenter\" region=\"bottomAlignd\" xml:id=\"sub13\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">I should just crush you.<\/tt:span>\n         <\/tt:p>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"28b1022f-040c-41a6-aecf-066cc76d0855",
+      "errorCategory":{
+        "constraintID":"w0ab1b5d229",
+        "title":"ttp:frameRate present",
+        "shortUserDesc":"It is recommended that the ttp:frameRate attribute is present on\n                the tt:tt element, as it is required to check the Netflix frame gap\n                constraint.",
+        "longUserDesc":"",
+        "specs":[
+          {
+            "name":"Netflix: Timed Text Style Guide: General Requirements, Version 2016-11-16",
+            "nameAcronym":"Netflix-General",
+            "text":"2 frames minimum (regardless of frame rate)",
+            "errorLevel":"INFO",
+            "section":"Chapter 3",
+            "uri":"https:\/\/backlothelp.netflix.com\/hc\/en-us\/articles\/215758617-Timed-Text-Style-Guide-General-Requirements"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"Missing vocabulary",
+            "longDesc":"Missing vocabulary",
+            "type":"Error type"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n            Assertion: The ttp:frameRate attribute is present on the tt:tt element.",
+              "messageAssertion":"The ttp:frameRate attribute is present on the tt:tt element."
+            },
+            "locations":{
+              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
+              "humanXPATH":"\/tt:tt",
+              "preview":"<tt:tt ttp:timeBase=\"media\" xml:lang=\"de\" ttp:cellResolution=\"50 30\" xml:space=\"default\">\n   <tt:head>\n      <tt:metadata>\n         <ebuttm:documentMetadata>\n            <ebuttm:conformsToStandard>urn:ebu:tt:distribution:2014-01<\/ebuttm:conformsToStandard>\n         <\/ebuttm:documentMetadata>\n      <[…]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"429d30f7-1771-47dc-bb9e-150c966cd99f",
+      "errorCategory":{
+        "constraintID":"NO_CONSTRAINT_ID_d10e4",
+        "title":"TTML1 XSD validation: Invalid content was found starting with element 'tt:unknown_tag'. One of '{\"http:\/\/www.w3.org\/ns\/ttml\":layout}' is expected",
+        "shortUserDesc":"The XSD validation returns the following status: 'invalid'",
+        "specs":[
+          {
+            "name":"Timed Text Markup Language 1 (TTML1) (Second Edition), Version 2013-09-24",
+            "nameAcronym":"TTML1",
+            "errorLevel":"ERROR"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1), Version 2016-04-21",
+            "nameAcronym":"IMSC1 Common",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted in the profile; SHALL NOT include any vocabulary, syntax or attribute\n                value associated with a Feature or Extension whose disposition is prohibited in the\n                profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1), Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1 Common",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1) - Text\n                Profile, Version 2016-04-21",
+            "nameAcronym":"IMSC1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#text-profile"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1) - Text\n                Profile, Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#text-profile"
+          },
+          {
+            "name":"Netflix: Timed Text Style Guide: General Requirements, Version 2016-11-16",
+            "nameAcronym":"Netflix-General",
+            "text":"Subtitle and SDH files for all languages must be delivered in a TTML (.dfxp or\n                .xml) format, except for Japanese, which must be delivered in Videotron Lambda Cap\n                format.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 2",
+            "uri":"https:\/\/backlothelp.netflix.com\/hc\/en-us\/articles\/215758617-Timed-Text-Style-Guide-General-Requirements"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"XML Schema validation error",
+            "longDesc":"XML Schema validation error",
+            "type":"Schema Error"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n                                        Assertion: The document validates against the XML Schema definition.\n                                        Error Information: Line 26, column 22: Invalid content was found starting with element 'tt:unknown_tag'. One of '{\"http:\/\/www.w3.org\/ns\/ttml\":layout}' is expected",
+              "messageAssertion":"The document validates against the XML Schema definition.",
+              "messageDiagnosticsAll":"Line 26, column 22: Invalid content was found starting with element 'tt:unknown_tag'. One of '{\"http:\/\/www.w3.org\/ns\/ttml\":layout}' is expected"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"23fc5da3-5b6a-466b-9424-422f462fa046",
+      "errorCategory":{
+        "constraintID":"NO_CONSTRAINT_ID_d10e6",
+        "title":"TTML1 XSD validation: There is no ID\/IDREF binding for IDREF 'bottomAlignd'",
+        "shortUserDesc":"The XSD validation returns the following status: 'invalid'",
+        "specs":[
+          {
+            "name":"Timed Text Markup Language 1 (TTML1) (Second Edition), Version 2013-09-24",
+            "nameAcronym":"TTML1",
+            "errorLevel":"ERROR"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1), Version 2016-04-21",
+            "nameAcronym":"IMSC1 Common",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted in the profile; SHALL NOT include any vocabulary, syntax or attribute\n                value associated with a Feature or Extension whose disposition is prohibited in the\n                profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1), Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1 Common",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1) - Text\n                Profile, Version 2016-04-21",
+            "nameAcronym":"IMSC1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#text-profile"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1) - Text\n                Profile, Version 2017-07-13",
+            "nameAcronym":"IMSC1.0.1-Text",
+            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#text-profile"
+          },
+          {
+            "name":"Netflix: Timed Text Style Guide: General Requirements, Version 2016-11-16",
+            "nameAcronym":"Netflix-General",
+            "text":"Subtitle and SDH files for all languages must be delivered in a TTML (.dfxp or\n                .xml) format, except for Japanese, which must be delivered in Videotron Lambda Cap\n                format.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 2",
+            "uri":"https:\/\/backlothelp.netflix.com\/hc\/en-us\/articles\/215758617-Timed-Text-Style-Guide-General-Requirements"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"XML Schema validation error",
+            "longDesc":"XML Schema validation error",
+            "type":"Schema Error"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n                                        Assertion: The document validates against the XML Schema definition.\n                                        Error Information: Line 80, column 9: There is no ID\/IDREF binding for IDREF 'bottomAlignd'",
+              "messageAssertion":"The document validates against the XML Schema definition.",
+              "messageDiagnosticsAll":"Line 80, column 9: There is no ID\/IDREF binding for IDREF 'bottomAlignd'"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"7b762a16-9084-4bfd-ba47-c0f42d41211a",
+      "errorCategory":{
+        "constraintID":"NO_CONSTRAINT_ID_d12e4",
+        "title":"TTML2 (Beta) XSD validation: Invalid content was found starting with element 'tt:unknown_tag'. One of '{\"http:\/\/www.w3.org\/ns\/ttml\":layout, \"http:\/\/www.w3.org\/ns\/ttml\":animation}' is expected",
+        "shortUserDesc":"The XSD validation returns the following status: 'invalid'",
+        "specs":[
+          {
+            "name":"Timed Text Markup Language 2 (TTML2) CR, Version 2018-03-13",
+            "nameAcronym":"TTML2 (Beta)",
+            "errorLevel":"ERROR"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1 Common (Beta)",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1 - Text Profile, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1-Text (Beta)",
+            "text":"The Text Profile consists of Sections 6. Supported Features and Extensions, 7.\n                Common Provisions and 8. Text Profile Provisions.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#text-profile"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"XML Schema validation error",
+            "longDesc":"XML Schema validation error",
+            "type":"Schema Error"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n                                        Assertion: The document validates against the XML Schema definition.\n                                        Error Information: Line 26, column 22: Invalid content was found starting with element 'tt:unknown_tag'. One of '{\"http:\/\/www.w3.org\/ns\/ttml\":layout, \"http:\/\/www.w3.org\/ns\/ttml\":animation}' is expected",
+              "messageAssertion":"The document validates against the XML Schema definition.",
+              "messageDiagnosticsAll":"Line 26, column 22: Invalid content was found starting with element 'tt:unknown_tag'. One of '{\"http:\/\/www.w3.org\/ns\/ttml\":layout, \"http:\/\/www.w3.org\/ns\/ttml\":animation}' is expected"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "uuid":"9897abe5-7c37-4f6f-ba52-19d854dc0a6a",
+      "errorCategory":{
+        "constraintID":"NO_CONSTRAINT_ID_d12e6",
+        "title":"TTML2 (Beta) XSD validation: There is no ID\/IDREF binding for IDREF 'bottomAlignd'",
+        "shortUserDesc":"The XSD validation returns the following status: 'invalid'",
+        "specs":[
+          {
+            "name":"Timed Text Markup Language 2 (TTML2) CR, Version 2018-03-13",
+            "nameAcronym":"TTML2 (Beta)",
+            "errorLevel":"ERROR"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1 Common (Beta)",
+            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 4",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#conformance"
+          },
+          {
+            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1 - Text Profile, Version 2017-10-17",
+            "nameAcronym":"IMSC1.1-Text (Beta)",
+            "text":"The Text Profile consists of Sections 6. Supported Features and Extensions, 7.\n                Common Provisions and 8. Text Profile Provisions.",
+            "errorLevel":"ERROR",
+            "section":"Chapter 5.2",
+            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#text-profile"
+          }
+        ],
+        "tags":[
+          {
+            "shortDesc":"XML Schema validation error",
+            "longDesc":"XML Schema validation error",
+            "type":"Schema Error"
+          }
+        ],
+        "errors":[
+          {
+            "messages":{
+              "messageMain":"\n                                        Assertion: The document validates against the XML Schema definition.\n                                        Error Information: Line 80, column 9: There is no ID\/IDREF binding for IDREF 'bottomAlignd'",
+              "messageAssertion":"The document validates against the XML Schema definition.",
+              "messageDiagnosticsAll":"Line 80, column 9: There is no ID\/IDREF binding for IDREF 'bottomAlignd'"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "filename":"subcheck_imsc1_2.xml",
+  "totalWords":"45",
+  "filesize":"6 KB",
+  "wpm":"59.16"
+}

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.w3.org/ns/ttml/profile/imsc1#styling" xml:lang="en"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:attribute name="forcedDisplay">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="true"/>
+        <xs:enumeration value="false"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+</xs:schema>

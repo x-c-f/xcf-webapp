@@ -1,0 +1,67 @@
+<div class="col-xs-12" style="background-color:white;">
+  <div class="col-xs-10">
+    <h1 id="about-subcheck">About Subcheck</h1>
+    <h2 id="current-state">Current State</h2>
+    <p> This service is available free-of-cost for testing purposes no warranty granted, any liability excluded.</p>
+    <h2 id="supported-subtitling-specifications">Supported subtitling specifications</h2>
+    <p>Focus of Subcheck is at the moment IMSC1 (TTML Profiles for Internet Media Subtitles and Captions 1.0)<a href="https://www.w3.org/TR/2016/REC-ttml-imsc1-20160421/">[1]</a>. IMSC1 is normatively referenced amongst others by the SMPTE Interoperable Master Format (IMF)<a href="https://imfug.com/about/">[2]</a>, ATSC 3.0 <a href="https://www.atsc.org/wp-content/uploads/2016/12/A343-2017-Captions-and-Subtitles-2.pdf">[3]</a> and the MPEG Common Media Application Format standard (CMAF)<a href="https://mpeg.chiariglione.org/standards/mpeg-a/common-media-application-format">[4]</a>. IMSC1 is also a superset of EBU-TT-D which is normatively referenced amongst others by HbbTV 2.0.1 <a href="https://www.hbbtv.org/wp-content/uploads/2015/07/HbbTV-SPEC20-00023-001-HbbTV_2.0.1_specification_for_publication_clean.pdf">[5]</a>, DVB DASH <a href="https://www.dvb.org/standards/dvb_dash">[6]</a>, the BBC Guidelines <a href="https://bbc.github.io/subtitle-guidelines/">[7]</a> and DVB TTML in TS delivery <a href="https://www.dvb.org/resources/public/standards/a174_dvb_ttml_subtitling_systems.pdf">[8]</a>. Therefore, IMSC is currently seen as the most promising candidate for a worldwide subtitling and captioning format, especially for online delivery.</p>
+    <p>Subcheck also includes an example how “house styles” and guidelines could be checked. See below for more information about how Subcheck validates against the public available Netflix guidelines.</p>
+    <p>In the following, some more information is given about each of the specifications.</p>
+    <h3 id="ttml">TTML</h3>
+    <p>Regardless which TTML profile is used: All documents must conform to the constraints in TTML 1 <a href="https://www.w3.org/TR/2013/REC-ttml1-20130924/">[9]</a>. Subcheck therefore not only includes checks on the extra constraints added by the IMSC profile but also more general ones from TTML 1. Most of the TTML constraints that are validated by Subcheck are based on the XML Schema published by W3C. In addition, some checks on the significance for attributes are added. In operation, the semantic significance of attributes gets very important. Although it is not a conformance error to define an attribute on an element where it is not significant, in most cases it points to a misunderstanding of the specification and could lead to a presentation result not intended by the document author.</p>
+    <h3 id="imsc1-common">IMSC1 Common</h3>
+    <p>IMSC1 has two profiles: the Text Profile <a href="https://www.w3.org/TR/2016/REC-ttml-imsc1-20160421/#text-profile-constraints">[10]</a> and the Image Profile <a href="https://www.w3.org/TR/2016/REC-ttml-imsc1-20160421/#image-profile-constraints">[11]</a>. Subcheck currently does not include constraints that are <strong>specific</strong> to the Image Profile.</p>
+    <p>Some of the IMSC1 constraints apply to both profiles, the Image and the Text Profile. They are summarized in IMSC1 under Common Constraints <a href="https://www.w3.org/TR/ttml-imsc1/#common-constraints">[12]</a>. Subcheck provides the option to only check the Common Constraints. If an error is reported for the “IMSC1 Common”, this would be an error for the Text as also for the Image Profile.</p>
+    <h3 id="imsc1-text">IMSC1 Text</h3>
+    <p>Subcheck validates most of the conformance rules imposed by the IMSC1 Text Profile <a href="https://www.w3.org/TR/2016/REC-ttml-imsc1-20160421/#text-profile-constraints">[10]</a>. It excludes a few rules, mostly for one of the two following reasons: The related feature of the constraint is rarely used (or not used at all) or there haven’t been found evidence that subtitle files currently used in operation break the constraint.</p>
+    <p>An example for the first case is the feature <code>#progressivelyDecodable</code> <a href="https://www.w3.org/TR/ttml-imsc1/#ttp-progressivelyDecodable">[13]</a>. This feature is planned to be deprecated in future versions of IMSC <a href="https://rawgit.com/w3c/imsc/IMSC1.1/imsc1/spec/ttml-ww-profiles.html#deprecated-selected-features">[14]</a>. An example for the second case are constraints made by the Hypothetical Render Model (HRM)<a href="https://www.w3.org/TR/ttml-imsc1/#hypothetical-render-model-1">[15]</a>.</p>
+    <p>If the IMSC1 Text Profile is activated, all constraints made by the IMSC1 Common are also automatically included (even if the IMSC Common profile checkbox is not activated).</p>
+    <h3 id="imsc-1.0.1-common">IMSC 1.0.1 Common</h3>
+    <p>IMSC 1.0.1 <a href="https://www.w3.org/TR/2017/CR-ttml-imsc1.0.1-20170713/#common-constraints">[16]</a> is a minor update of IMSC. It adds two new features and includes editorial clarifications (see below IMSC 1.0.1 Text profile). Although the specification has not reached final recommendation status yet, it is published as Candidate Recommendation and implementers starting with IMSC should take IMSC 1.0.1 as a base reference.</p>
+    <p>Apart from the URL of the specification reference the Common Constraints of IMSC 1.0.1 are the same as the Common Constraints of IMSC 1.0.</p>
+    <h3 id="imsc-1.0.1-text">IMSC 1.0.1 Text</h3>
+    <p>IMSC 1.0.1 Text <a href="https://www.w3.org/TR/2017/CR-ttml-imsc1.0.1-20170713/#text-profile-constraints">[17]</a> adds two new features: <code>#fillLineGap</code> <a href="https://www.w3.org/TR/2017/CR-ttml-imsc1.0.1-20170713/#itts-fillLineGap">[18]</a> and <code>#activeArea</code><a href="https://www.w3.org/TR/2017/CR-ttml-imsc1.0.1-20170713/#ittp-activeArea">[19]</a>. Subcheck tests significance and the data type of the related attributes.</p>
+    <p>Apart from constraint checks of these two new features and the URIs of the specification reference the constraints for the Text Profile of IMSC 1.0.1 are the same as for the Text Profile of version 1.0.</p>
+    <h3 id="netflix-guideline">Netflix Guideline</h3>
+    <p>The integration of rules defined by the public available Netflix Timed Text Style Guide (Timed Text Style Guide: General Requirements) <a href="https://backlothelp.netflix.com/hc/en-us/articles/215758617-Timed-Text-Style-Guide-General-Requirements">[20]</a> is used as an example how arbitrary “House Guidelines” could be tested on top of constraints made by technical specifications. Amongst others Subcheck tests if all text/characters are included in the NETFLIX Glyph List <a href="https://backlothelp.netflix.com/hc/en-us/articles/215581437-Netflix-Accepted-Glyph-List">[21]</a>.</p>
+    <p>Note that the integration of the Netflix Guideline does not signal any endorsement by NETFLIX nor that files that pass the Subcheck validation would be accepted by NETFLIX.</p>
+    <h2 id="usage">Usage</h2>
+    <p>To check a subtitle file, the file could be moved by drag-and-drop onto the marked area. Alternatively, a click in the marked area opens a dialog to select a file from a local drive. The analysis starts immediately.</p>
+    <p>Before and after the analysis the results can be filtered by various criteria. These criteria are grouped by categories such as “Specifications” or “Error Level”. The filter settings can be opened and closed by clicking on the button “Filter Options”.</p>
+    <p>If more than one criterion of a category (e.g. “IMSC1-Text” and “Netflix General” for the category “Specifications”) is selected, all messages that apply to one of the select criteria will appear in the result (e.g. all messages that apply to “IMSC1-Text” or “Netflix-General”).</p>
+    <p>If criteria from distinct categories are selected (e.g. “IMSC1-Text” in the category “Specifications” and “Error” in the category “Error Level”), only those messages that match both criteria will appear in the result (e.g. only messages that signal errors in the IMSC1 Text Profile).</p>
+    <h2 id="result-list">Result list</h2>
+    <p>At the beginning basic information regarding the complete subtitle file, e.g. file size or total number of words, is shown.</p>
+    <p>The message list contains one entry per violated constraint. Error level and a short constraint title are displayed. By clicking on an entry further information is shown in multiple tabs.</p>
+    <p>The “Description” tab summarizes the assumption or assertion that was met.</p>
+    <p>The “More Information” tab provides a detailed description (if available) and tags the message (e.g. regarding error type or editorial constraints).</p>
+    <p>The “Specification” tab shows all specifications that directly or indirectly refer to the constraint that was violated. Each reference indicates the version, the exact location(s) and, if available, the URI of the specification document. In addition the relevant part of the specification text is quoted.</p>
+    <p>The “Error Details” tab lists all error locations in the checked source document. Each location is shown as an syntax highlighted XML fragment. Below the XML fragment an XPath expression points to the affected XML node and can be used for further processing, e.g. in an external XML editor. If a constraint is violated at more than 50 locations, only the first 50 locations are shown.</p>
+    <h2 id="contact">Contact</h2>
+    <p>We are happy to receive any comments at <a href="mailto:feedback@subcheck.io">feedback@subcheck.io</a>.</p>
+    <h2 id="references">References</h2>
+    <p>[1] https://www.w3.org/TR/2016/REC-ttml-imsc1-20160421/</p>
+    <p>[2] https://imfug.com/about/</p>
+    <p>[3] https://www.atsc.org/wp-content/uploads/2016/12/A343-2017-Captions-and-Subtitles-2.pdf</p>
+    <p>[4] https://www.iso.org/standard/71975.html</p>
+    <p>[5] https://www.hbbtv.org/wp-content/uploads/2015/07/HbbTV-SPEC20-00023-001-HbbTV_2.0.1_specification_for_publication_clean.pdf</p>
+    <p>[6] https://www.dvb.org/standards/dvb_dash</p>
+    <p>[7] https://bbc.github.io/subtitle-guidelines/</p>
+    <p>[8] https://www.dvb.org/resources/public/standards/a174_dvb_ttml_subtitling_systems.pdf</p>
+    <p>[9] https://www.w3.org/TR/2013/REC-ttml1-20130924/</p>
+    <p>[10] https://www.w3.org/TR/2016/REC-ttml-imsc1-20160421/#text-profile-constraints</p>
+    <p>[11] https://www.w3.org/TR/2016/REC-ttml-imsc1-20160421/#image-profile-constraints</p>
+    <p>[12] https://www.w3.org/TR/ttml-imsc1/#common-constraints</p>
+    <p>[13] https://www.w3.org/TR/ttml-imsc1/#ttp-progressivelyDecodable</p>
+    <p>[14] https://rawgit.com/w3c/imsc/IMSC1.1/imsc1/spec/ttml-ww-profiles.html#deprecated-selected-features</p>
+    <p>[15] https://www.w3.org/TR/ttml-imsc1/#hypothetical-render-model-1</p>
+    <p>[16] https://www.w3.org/TR/2017/CR-ttml-imsc1.0.1-20170713/#common-constraints</p>
+    <p>[17] https://www.w3.org/TR/2017/CR-ttml-imsc1.0.1-20170713/#text-profile-constraints</p>
+    <p>[18] https://www.w3.org/TR/2017/CR-ttml-imsc1.0.1-20170713/#itts-fillLineGap</p>
+    <p>[19] https://www.w3.org/TR/2017/CR-ttml-imsc1.0.1-20170713/#ittp-activeArea</p>
+    <p>[20] https://backlothelp.netflix.com/hc/en-us/articles/215758617-Timed-Text-Style-Guide-General-Requirements</p>
+    <p>[21] https://backlothelp.netflix.com/hc/en-us/articles/215581437-Netflix-Accepted-Glyph-List</p>
+
+
+  </div>
+</div>

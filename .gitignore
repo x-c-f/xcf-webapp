@@ -1,0 +1,9 @@
+.idea
+/npm-debug.log
+backend/app/.logs
+/backend/app/.DS_Store
+/backend/app/.basexgui
+/backend/.DS_Store
+/.DS_Store
+/backend/app/debug.xml
+/frontend/package-lock.json
