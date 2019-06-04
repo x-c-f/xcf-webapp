@@ -82,7 +82,7 @@ const STATUS_FAILED = 3;
 const STATUS_FORBIDDEN = 4;
 const protocol = location.protocol;
 const slashes = protocol.concat("//");
-const port = window.location.port === "80" ||window.location.hostname === "443" ? "" :":" + window.location.port;
+const port = window.location.port === "80" || window.location.hostname === "443" ? "" : ":" + window.location.port;
 const host = slashes.concat(window.location.hostname) + port;
 const URL = process.env.NODE_ENV === 'production' ? host : "http://localhost:8080";
 export default {

@@ -4,25 +4,27 @@
  :)
 module namespace page = 'http://basex.org/modules/web-page';
 
-import module namespace subcheck = "subcheck"  at "../repo/subcheck.xqm";
-
 
 declare variable $page:xslt-cache := map { 'cache': true() };
 
-declare variable $page:CONFIG := let $doc := fetch:xml('config.xml')
-return $doc update (
-  insert node attribute constraint { $doc/config/xcf-rules || "constraints.xml" } as first into config,
-  replace node config/xcf-engine with element xcf-engine {fetch:xml(config/xcf-engine || "reportview.xsl")},
-  insert node element xcf-constraints { fetch:xml(config/xcf-rules|| "constraints.xml") } as last into config,
-  insert node element xcf-rules       {
-    fetch:xml(config/xcf-rules || "rules_compiled.xslt") update {
-   for $href in .//Q{http://www.w3.org/1999/XSL/Transform}include[@href]
-   return replace value of node $href/@href with (
-     $doc/config/xcf-rules || $href/@href
-   )
-  }
-  } as last into config
-);
+declare variable $page:CONFIG := 
+  if(file:exists('config.xml')) then 
+    let $doc := fetch:xml('config.xml')
+    return $doc update (
+      insert node attribute constraint { $doc/config/xcf-rules || "constraints.xml" } as first into config,
+      replace node config/xcf-engine with element xcf-engine {fetch:xml(config/xcf-engine || "reportview.xsl")},
+      insert node element xcf-constraints { fetch:xml(config/xcf-rules|| "constraints.xml") } as last into config,
+      insert node element xcf-rules       {
+        fetch:xml(config/xcf-rules || "rules_compiled.xslt") update {
+          for $href in .//Q{http://www.w3.org/1999/XSL/Transform}include[@href]
+          return replace value of node $href/@href with (
+            $doc/config/xcf-rules || $href/@href
+          )
+        }
+      } as last into config,
+      insert node element xcf-ui { fetch:xml(config/xcf-rules || "rules_config.xml") } as last into config
+    )
+  else trace((), "Config.xml not found, please see Readme");
 
 
 declare function page:decorate-report($report as element(result), $doc-path as xs:string) as element(json){
@@ -128,9 +130,9 @@ declare function page:val($output as xs:string, $filename as xs:string){
      )
    let $report := page:decorate-report($xml_report/result, $output)
    let $wpm := try {
-     subcheck:get-reading-speeds( $output_doc/*:tt ) => avg()
+      0
      } catch * {
-       -1
+       0
       }
    return $report update {
      insert node element filename { $filename } into .,
@@ -143,10 +145,7 @@ declare function page:val($output as xs:string, $filename as xs:string){
              => count() } into .
      ,
 
-     insert node element filesize { $output => file:size() => prof:human() } into .,
-     insert node element wpm {
-       format-number( $wpm, "0.00")
-      } into .
+     insert node element filesize { $output => file:size() => prof:human() } into .
    }
   }catch err:bar {
     <json type="object">
@@ -225,11 +224,12 @@ function page:tags(){
            {
              $page:CONFIG/config/xcf-constraints//Specification[empty(.//disableFilter)]/Acronym
              => for-each(function($it){
-                  element _ {
+                  let $sel := $page:CONFIG/config/xcf-ui//Specification[@ID = $it/ancestor::Specification/@ID]/selectFilterInitial
+                  return element _ {
                     element Long  { $it/string() },
                     element Short { $it/string() },
                     element ID    { $it/string() },
-                    element selectFilterInitial { exists($it/../Config/selectFilterInitial)}
+                    element selectFilterInitial { exists($sel)}
                   }
                })
            }

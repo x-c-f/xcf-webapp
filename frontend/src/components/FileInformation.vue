@@ -4,10 +4,6 @@
       <dl class="dl-horizontal">
        <dt>Filename</dt>
        <dd><kbd v-html="rawReport.filename"/>, {{rawReport.filesize}}</dd>
-       <dt>Total Words</dt>
-       <dd><kbd>{{ rawReport.totalWords }}</kbd></dd>
-       <dt>Words/minute </dt>
-       <dd><kbd>{{ rawReport.wpm | numeral }}</kbd></dd>
       </dl>
   </div>
 </template>
