@@ -34,13 +34,38 @@ Make sure your `engine` & `rules`-folders contain at least the following files:
 └── subtitles
     ├── constraints.xml
     ├── irt_functions.xsl
-    └── rules_compiled.xslt
+    ├── rules_compiled.xslt
+    └── rules_config.xml
 ```
 
-* Erklären was die Dateien machen (subcheck_custom <> docs/artifacts)
-*
+For more information on what these files do, please refer to: 
 
-### To Build from Source and Run
+In short: 
+
+
+
+* `rules_compiled.xslt` contains a transformation that performs the actual checking
+* `constraints.xml` contains detailed information for a given error, that will be added to the report
+* `reportview.xsl` is used to convert a report a more user friendly format
+* `rules_config.xml` can be used to configure which checkboxes in the web-fronted are initially checked
+
+### Development
+
+For development start `webpack-dev-server`:
+
+```bash
+cd frontend && npm install && npm run build
+```
+
+alongside the `basexhttp`-backend:
+
+```bash
+cd backend/app && bin/basexhttp
+````
+
+The frontend will be served at [localhost:8080](http://localhost:8080) and requests to the BaseX HTTP backend will be proxied automatically by webpack.
+
+### To Build from Source and run in production
 
 ```bash
 # Build the frontend
@@ -58,11 +83,3 @@ cd backend/app && bin/basexhttp
 cd frontend && npm install && npm run build && cd ..
 docker build -t xcf-check . && docker run -p 80:8984 xcf-check
 ```
-
-### To run:
-
-    docker login git.basex.io:4567
-    # use your gitlab credentials
-    …
-    docker run git.basex.io:4567/ms/subcheck-project -p80:8984
-    # then open http://docker-host
