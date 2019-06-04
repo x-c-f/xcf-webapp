@@ -2,12 +2,16 @@
 
 This is both the front- and backend for the XCF-Web-Application.
 
-*TODO* License.
-
-
 ## Running the application
 
-To run the application point it to the…
+### First time run
+To run the application you have to create a config file or rename our predefined config-file located in the `backend`-folder.
+
+```bash
+cp backend/config.default.xml backend/config.xml
+```
+
+### About the config file
 
 Applications can be run from arbitrary URLs, local installations are possible.
 Just point the engine and rules to a local folder. Please use absolute paths or even better
@@ -39,6 +43,18 @@ Make sure your `engine` & `rules`-folders contain at least the following files:
 ### To Build from Source and Run
 
 ```bash
+# Build the frontend
+cd frontend && npm install && npm run build && cd ..
+cp frontend/dist/index.html backend/app/webapp/
+cp -r frontend/dist/assets backend/app/webapp/
+# Start basexhttp
+cd backend/app && bin/basexhttp
+```
+
+### To build a docker container
+
+```bash
+# Build the frontend
 cd frontend && npm install && npm run build && cd ..
 docker build -t xcf-check . && docker run -p 80:8984 xcf-check
 ```

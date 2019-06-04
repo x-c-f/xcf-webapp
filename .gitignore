@@ -7,3 +7,6 @@ backend/app/.logs
 /.DS_Store
 /backend/app/debug.xml
 /frontend/package-lock.json
+/backend/app/config.xml
+/backend/app/webapp/assets
+/backend/app/webapp/index.html
