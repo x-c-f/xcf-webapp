@@ -31,7 +31,7 @@ Make sure your `engine` & `rules`-folders contain at least the following files:
 │   └── reportview.xsl
 └── rules
     ├── constraints.xml
-    ├── rules_compiled.xslt
+    ├── rules_compiled.xsl
     └── rules_config.xml
 ```
 
@@ -41,7 +41,7 @@ In short:
 
 
 
-* `rules_compiled.xslt` contains a transformation that performs the actual checking
+* `rules_compiled.xsl` contains a transformation that performs the actual checking
 * `constraints.xml` contains detailed information for a given error, that will be added to the report
 * `reportview.xsl` is used to convert a report a more user friendly format
 * `rules_config.xml` can be used to configure which checkboxes in the web-fronted are initially checked

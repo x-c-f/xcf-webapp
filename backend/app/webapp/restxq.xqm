@@ -15,7 +15,7 @@ declare variable $page:CONFIG :=
       replace node config/xcf-engine with element xcf-engine {fetch:xml(config/xcf-engine || "reportview.xsl")},
       insert node element xcf-constraints { fetch:xml(config/xcf-rules|| "constraints.xml") } as last into config,
       insert node element xcf-rules       {
-        fetch:xml(config/xcf-rules || "rules_compiled.xslt") update {
+        fetch:xml(config/xcf-rules || "rules_compiled.xsl") update {
           for $href in .//Q{http://www.w3.org/1999/XSL/Transform}include[@href]
           return replace value of node $href/@href with (
             $doc/config/xcf-rules || $href/@href
