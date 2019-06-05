@@ -8,7 +8,7 @@ This is both the front- and backend for the XCF-Web-Application.
 To run the application you have to create a config file or rename our predefined config-file located in the `backend`-folder.
 
 ```bash
-cp backend/config.default.xml backend/config.xml
+cp backend/app/config.default.xml backend/app/config.xml
 ```
 
 ### About the config file
