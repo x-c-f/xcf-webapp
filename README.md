@@ -31,9 +31,8 @@ Make sure your `engine` & `rules`-folders contain at least the following files:
 .xcf-application
 ├── engine
 │   └── reportview.xsl
-└── subtitles
+└── checks
     ├── constraints.xml
-    ├── irt_functions.xsl
     ├── rules_compiled.xslt
     └── rules_config.xml
 ```
