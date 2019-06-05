@@ -31,7 +31,7 @@ Make sure your `engine` & `rules`-folders contain at least the following files:
 .xcf-application
 ├── engine
 │   └── reportview.xsl
-└── checks
+└── rules
     ├── constraints.xml
     ├── rules_compiled.xslt
     └── rules_config.xml
