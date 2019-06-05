@@ -18,17 +18,15 @@ Just point the engine and rules to a local folder. Please use absolute paths or 
 `file://`-URLs.
 
 ```xml
-<!-- *TODO* replace with real IRT URLs -->
 <config>
-  <xcf-engine>http://files.basex.org/.xcf-application/engine/</xcf-engine>
-  <xcf-rules>http://files.basex.org/.xcf-application/checks/</xcf-rules>
+  <xcf-engine>https://subtitling.irt.de/xcf_sample/engine/</xcf-engine>
+  <xcf-rules>https://subtitling.irt.de/xcf_sample/rules/</xcf-rules>
 </config>
 ```
 
 Make sure your `engine` & `rules`-folders contain at least the following files:
 
 ```bash
-.xcf-application
 ├── engine
 │   └── reportview.xsl
 └── rules

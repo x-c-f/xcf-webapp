@@ -1,4 +1,4 @@
 <config>
-  <xcf-engine>http://files.basex.org/.xcf-application/engine/</xcf-engine>
-  <xcf-rules>http://files.basex.org/.xcf-application/checks/</xcf-rules>
+  <xcf-engine>https://subtitling.irt.de/xcf_sample/engine/</xcf-engine>
+  <xcf-rules>https://subtitling.irt.de/xcf_sample/rules/</xcf-rules>
 </config>
