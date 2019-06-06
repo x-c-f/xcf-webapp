@@ -9,8 +9,7 @@ export const store = new Vuex.Store({
     tabForError: {},
     tags: {},
     report: [],
-    rawReport: {},
-    authToken: undefined
+    rawReport: {}
   },
   getters: {
     hasFilters: (state) => {
@@ -86,10 +85,6 @@ export const store = new Vuex.Store({
     }
   },
   mutations: {
-    authToken (state, payload) {
-      state.authToken = payload;
-    },
-
     filter (state, payload) {
       state.FILTERS = payload;
     },

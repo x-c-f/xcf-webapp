@@ -1,608 +1,70 @@
 {
-  "report":[
-    {
-      "uuid":"c9ee27fc-ee0b-4087-8222-45e4b8235593",
-      "errorCategory":{
-        "constraintID":"d1e107",
-        "title":"tts:origin not significant (TTML1)",
-        "shortUserDesc":"The attribute tts:origin has only significance on the following\n                elements: tt:region (or on a tt:set child of it), tt:style.",
-        "longUserDesc":"A style property has only effect on the rendered content if one or\n                more of the following cases are true: It is specified on an element where it\n                applies. It can be inherited to an element where it applies. It is specified on a\n                tt:set element which is the child of a content element where it\n                applies.",
-        "specs":[
-          {
-            "name":"Timed Text Markup Language 1 (TTML1) (Second Edition), Version 2013-09-24",
-            "nameAcronym":"TTML1",
-            "text":"Applies to: region",
-            "errorLevel":"WARNING",
-            "section":"Chapter 8.2.14",
-            "uri":"https:\/\/www.w3.org\/TR\/ttaf1-dfxp\/#style-attribute-origin"
+  "report": [{
+      "uuid": "6c79bbaa-39ea-442f-b274-be2db6bf6190",
+      "errorCategory": {
+        "constraintID": "c1",
+        "title": "Cabin Bag Max. Weight 8kg",
+        "shortUserDesc": "Cabin bag should not have more than 8kg weight.",
+        "longUserDesc": "",
+        "specs": [{
+          "name": "Conditons Aeto, Version 1.0",
+          "nameAcronym": "C-Aeto",
+          "errorLevel": "ERROR"
+        }],
+        "tags": [{
+          "shortDesc": "Weight",
+          "longDesc": "Weight related",
+          "descText": "Everything related to luggage weight.",
+          "type": "Error type"
+        }],
+        "errors": [{
+          "messages": {
+            "messageMain": "\n            Assertion: The weight of cabin luggage is 8kg or less.\n                Error Information: The cabin luggage of Jane Grant exceeds the maximum weight allowance by 2kg. Pack lighter!",
+            "messageAssertion": "The weight of cabin luggage is 8kg or less.",
+            "messageDiagnosticsAll": "The cabin luggage of Jane Grant exceeds the maximum weight allowance by 2kg. Pack lighter!"
           },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1), Version 2016-04-21",
-            "nameAcronym":"IMSC1 Common",
-            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted in the profile; SHALL NOT include any vocabulary, syntax or attribute\n                value associated with a Feature or Extension whose disposition is prohibited in the\n                profile.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 4",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#conformance"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1) - Text\n                Profile, Version 2016-04-21",
-            "nameAcronym":"IMSC1-Text",
-            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 5.2",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#text-profile"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1), Version 2017-07-13",
-            "nameAcronym":"IMSC1.0.1 Common",
-            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 4",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#conformance"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1) - Text\n                Profile, Version 2017-07-13",
-            "nameAcronym":"IMSC1.0.1-Text",
-            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 5.2",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#text-profile"
-          },
-          {
-            "name":"Netflix: Timed Text Style Guide: General Requirements, Version 2016-11-16",
-            "nameAcronym":"Netflix-General",
-            "text":"Subtitle and SDH files for all languages must be delivered in a TTML (.dfxp or\n                .xml) format, except for Japanese, which must be delivered in Videotron Lambda Cap\n                format.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 2",
-            "uri":"https:\/\/backlothelp.netflix.com\/hc\/en-us\/articles\/215758617-Timed-Text-Style-Guide-General-Requirements"
+          "locations": {
+            "resolvableXPATH": "\/passenger[1]\/cabin-bag[1]\/weight[1]",
+            "humanXPATH": "\/passenger\/cabin-bag\/weight",
+            "preview": "<weight>10<\/weight>"
           }
-        ],
-        "tags":[
-          {
-            "shortDesc":"Properties with no effect",
-            "longDesc":"Properties with no effect",
-            "type":"Error type"
-          }
-        ],
-        "errors":[
-          {
-            "messages":{
-              "messageMain":"\n            Assertion: The attribute tts:origin is defined on one of the following elements: tt:region (or on a tt:set child of it), tt:style.\n                Error Information: The attribute 'tts:origin' appears on the element 'tt:p'.",
-              "messageAssertion":"The attribute tts:origin is defined on one of the following elements: tt:region (or on a tt:set child of it), tt:style.",
-              "messageDiagnosticsAll":"The attribute 'tts:origin' appears on the element 'tt:p'."
-            },
-            "locations":{
-              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][3]\/@*[local-name()='origin' and namespace-uri()='http:\/\/www.w3.org\/ns\/ttml#styling']",
-              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[3]\/@tts:origin",
-              "preview":"<tt:p begin=\"00:00:13.560\" end=\"00:00:18.640\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub2\" tts:origin=\"10% 10%\" tts:extent=\"80% 80%\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">But that's no reason to<\/tt:span>\n            <tt:br\/>\n            <tt:span style=\"WhiteOnBlack[…]"
-            }
-          }
-        ]
+        }]
       }
     },
     {
-      "uuid":"0ad81605-26eb-4ac5-af7c-bc679c81512c",
-      "errorCategory":{
-        "constraintID":"d1e107a",
-        "title":"tts:origin not significant (TTML2)",
-        "shortUserDesc":"The attribute tts:origin has only significance on the following\n                elements: tt:region (or on a tt:set child of it), tt:style,\n                tt:initial.",
-        "longUserDesc":"A style property has only effect on the rendered content if one or\n                more of the following cases are true: It is specified on an element where it\n                applies. It can be inherited to an element where it applies. It is specified on a\n                tt:set element which is the child of a content element where it\n                applies.",
-        "specs":[
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
-            "nameAcronym":"IMSC1.1 Common (Beta)",
-            "text":"All features specified in [TTML2] are prohibited unless specified\n                    otherwise below. [The feature #region-implied-animation is not\n                    specified]",
-            "errorLevel":"WARNING",
-            "section":"Chapter 6",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#supported-features-and-extensions"
+      "uuid": "d93c3563-d427-4cbc-ae78-d4e26a2e06de",
+      "errorCategory": {
+        "constraintID": "c6",
+        "title": "Cabin Bag Max. Depth 24cm",
+        "shortUserDesc": "Depth of cabin bag should not exceed 24cm.",
+        "longUserDesc": "",
+        "specs": [{
+          "name": "Conditions Örn, Version 1.0",
+          "nameAcronym": "C-Örn",
+          "errorLevel": "ERROR"
+        }],
+        "tags": [{
+          "shortDesc": "Dimension",
+          "longDesc": "Dimension related",
+          "descText": "Everything related to the luggage dimensions.",
+          "type": "Error type"
+        }],
+        "errors": [{
+          "messages": {
+            "messageMain": "\n            Assertion: The depth of cabin luggage is 24cm or less.\n                Error Information: The cabin luggage of Jane Grant exceeds the maximum depth allowance by 1cm. Get something with less depth!",
+            "messageAssertion": "The depth of cabin luggage is 24cm or less.",
+            "messageDiagnosticsAll": "The cabin luggage of Jane Grant exceeds the maximum depth allowance by 1cm. Get something with less depth!"
           },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
-            "nameAcronym":"IMSC1.1 Common (Beta)",
-            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 4",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#conformance"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1 - Text Profile, Version 2017-10-17",
-            "nameAcronym":"IMSC1.1-Text (Beta)",
-            "text":"The Text Profile consists of Sections 6. Supported Features and Extensions, 7.\n                Common Provisions and 8. Text Profile Provisions.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 5.2",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#text-profile"
+          "locations": {
+            "resolvableXPATH": "\/passenger[1]\/cabin-bag[1]\/depth[1]",
+            "humanXPATH": "\/passenger\/cabin-bag\/depth",
+            "preview": "<depth>25<\/depth>"
           }
-        ],
-        "tags":[
-          {
-            "shortDesc":"Properties with no effect",
-            "longDesc":"Properties with no effect",
-            "type":"Error type"
-          }
-        ],
-        "errors":[
-          {
-            "messages":{
-              "messageMain":"\n            Assertion: The attribute tts:origin is defined on one of the following elements: tt:region (or on a tt:set child of it), tt:style, tt:initial.\n                Error Information: The attribute 'tts:origin' appears on the element 'tt:p'.",
-              "messageAssertion":"The attribute tts:origin is defined on one of the following elements: tt:region (or on a tt:set child of it), tt:style, tt:initial.",
-              "messageDiagnosticsAll":"The attribute 'tts:origin' appears on the element 'tt:p'."
-            },
-            "locations":{
-              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][3]\/@*[local-name()='origin' and namespace-uri()='http:\/\/www.w3.org\/ns\/ttml#styling']",
-              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[3]\/@tts:origin",
-              "preview":"<tt:p begin=\"00:00:13.560\" end=\"00:00:18.640\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub2\" tts:origin=\"10% 10%\" tts:extent=\"80% 80%\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">But that's no reason to<\/tt:span>\n            <tt:br\/>\n            <tt:span style=\"WhiteOnBlack[…]"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "uuid":"7c18389f-08a2-4999-84d7-3f518ab30010",
-      "errorCategory":{
-        "constraintID":"d1e1488",
-        "title":"Same timecode syntax",
-        "shortUserDesc":"All timecodes in a document should use the same syntax, either\n                clock-time or offset-time.",
-        "longUserDesc":"It is good practice to use the same syntax for all timecodes in a\n                document, as it ensures consistent behaviour for subsequent processing for all\n                timecodes in the document.",
-        "specs":[
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1), Version 2016-04-21",
-            "nameAcronym":"IMSC1 Common",
-            "text":"[The feature] #timing [is] permitted [and has the] additional provision\n                    \"All time expressions within a Document Instance SHOULD use the same syntax,\n                    either clock-time or offset-time.\".",
-            "errorLevel":"WARNING",
-            "section":"Chapter 6.11",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#common-features"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1), Version 2017-07-13",
-            "nameAcronym":"IMSC1.0.1 Common",
-            "text":"[The feature] #timing [is] permitted [and has the] additional provision\n                    \"All time expressions within a Document Instance SHOULD use the same syntax,\n                    either clock-time or offset-time.\".",
-            "errorLevel":"WARNING",
-            "section":"Chapter 6.11",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#common-features"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1) - Text\n                Profile, Version 2016-04-21",
-            "nameAcronym":"IMSC1-Text",
-            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 5.2",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#text-profile"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1) - Text\n                Profile, Version 2017-07-13",
-            "nameAcronym":"IMSC1.0.1-Text",
-            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 5.2",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#text-profile"
-          }
-        ],
-        "tags":[
-          {
-            "shortDesc":"Inconsistent values",
-            "longDesc":"Inconsistent values",
-            "type":"Error type"
-          }
-        ],
-        "errors":[
-          {
-            "messages":{
-              "messageMain":"\n            Assertion: All time expressions in a document should use the same syntax.",
-              "messageAssertion":"All time expressions in a document should use the same syntax."
-            },
-            "locations":{
-              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
-              "humanXPATH":"\/tt:tt",
-              "preview":"<tt:tt ttp:timeBase=\"smpte\" ttp:dropMode=\"nonDrop\" xml:lang=\"de\" ttp:cellResolution=\"50 30\" xml:space=\"default\" ttp:frameRate=\"50\">\n   <tt:head>\n      <tt:metadata>\n         <ebuttm:documentMetadata>\n            <ebuttm:conformsToStandard>urn:ebu:tt:distribution:2014-01<\/ebuttm:conformsToStandard>\n […]"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "uuid":"84136724-0c9f-41e1-98fa-2387c7280ce9",
-      "errorCategory":{
-        "constraintID":"d1e228",
-        "title":"ttp:dropMode not allowed",
-        "shortUserDesc":"The attribute ttp:dropMode shall not be\n                present.",
-        "longUserDesc":"While this attribute affects only the 'smpte' timebase, some\n                text-based profiles like IMSC1 only allow the 'media' timebase, as this timeline is\n                usually used for Internet distribution. Thus this attribute would have no meaning,\n                if present. ",
-        "specs":[
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1), Version 2016-04-21",
-            "nameAcronym":"IMSC1 Common",
-            "text":"[The feature] #dropMode [is] prohibited.",
-            "errorLevel":"ERROR",
-            "section":"Chapter 6.11",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#common-features"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1), Version 2017-07-13",
-            "nameAcronym":"IMSC1.0.1 Common",
-            "text":"[The feature] #dropMode [is] prohibited.",
-            "errorLevel":"ERROR",
-            "section":"Chapter 6.11",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#common-features"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
-            "nameAcronym":"IMSC1.1 Common (Beta)",
-            "text":"All features specified in [TTML2] are prohibited unless specified\n                    otherwise below. [The feature #dropMode is not specified]",
-            "errorLevel":"ERROR",
-            "section":"Chapter 6",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#supported-features-and-extensions"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1) - Text\n                Profile, Version 2016-04-21",
-            "nameAcronym":"IMSC1-Text",
-            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
-            "errorLevel":"ERROR",
-            "section":"Chapter 5.2",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#text-profile"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1) - Text\n                Profile, Version 2017-07-13",
-            "nameAcronym":"IMSC1.0.1-Text",
-            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
-            "errorLevel":"ERROR",
-            "section":"Chapter 5.2",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#text-profile"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1 - Text Profile, Version 2017-10-17",
-            "nameAcronym":"IMSC1.1-Text (Beta)",
-            "text":"The Text Profile consists of Sections 6. Supported Features and Extensions, 7.\n                Common Provisions and 8. Text Profile Provisions.",
-            "errorLevel":"ERROR",
-            "section":"Chapter 5.2",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#text-profile"
-          }
-        ],
-        "tags":[
-          {
-            "shortDesc":"Prohibited vocabulary",
-            "longDesc":"Prohibited vocabulary",
-            "type":"Error type"
-          }
-        ],
-        "errors":[
-          {
-            "messages":{
-              "messageMain":"\n            Assertion: The attribute ttp:dropMode is not used.\n                Error Information: The attribute 'ttp:dropMode' appears on the element 'tt:tt'.",
-              "messageAssertion":"The attribute ttp:dropMode is not used.",
-              "messageDiagnosticsAll":"The attribute 'ttp:dropMode' appears on the element 'tt:tt'."
-            },
-            "locations":{
-              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/@*[local-name()='dropMode' and namespace-uri()='http:\/\/www.w3.org\/ns\/ttml#parameter']",
-              "humanXPATH":"\/tt:tt\/@ttp:dropMode",
-              "preview":"<tt:tt ttp:timeBase=\"smpte\" ttp:dropMode=\"nonDrop\" xml:lang=\"de\" ttp:cellResolution=\"50 30\" xml:space=\"default\" ttp:frameRate=\"50\">\n   <tt:head>\n      <tt:metadata>\n         <ebuttm:documentMetadata>\n            <ebuttm:conformsToStandard>urn:ebu:tt:distribution:2014-01<\/ebuttm:conformsToStandard>\n […]"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "uuid":"2409bccc-61df-4338-ba5f-2a4c551b4df1",
-      "errorCategory":{
-        "constraintID":"d1e398",
-        "title":"Only 'media' allowed for ttp:timeBase",
-        "shortUserDesc":"For the attribute ttp:timeBase only the value \"media\" is\n                permitted.",
-        "longUserDesc":"TTML1 specifies three possible timebase values: media, smpte and\n                clock. In some text-based profiles like IMSC1, the usage of timebase 'smpte' and\n                'clock' is not permitted. The default timebase is 'media' if ttp:timeBase is not\n                specified on the tt element.",
-        "specs":[
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1), Version 2016-04-21",
-            "nameAcronym":"IMSC1 Common",
-            "text":"[The features] #timeBase-clock [and] #timeBase-smpte [are]\n                    prohibited.",
-            "errorLevel":"ERROR",
-            "section":"Chapter 6.11",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#common-features"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1), Version 2017-07-13",
-            "nameAcronym":"IMSC1.0.1 Common",
-            "text":"[The features] #timeBase-clock [and] #timeBase-smpte [are]\n                    prohibited.",
-            "errorLevel":"ERROR",
-            "section":"Chapter 6.11",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#common-features"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
-            "nameAcronym":"IMSC1.1 Common (Beta)",
-            "text":"All features specified in [TTML2] are prohibited unless specified\n                    otherwise below. [The features #timeBase-clock and #timeBase-smpte are not\n                    specified]",
-            "errorLevel":"ERROR",
-            "section":"Chapter 6",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#supported-features-and-extensions"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1) - Text\n                Profile, Version 2016-04-21",
-            "nameAcronym":"IMSC1-Text",
-            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
-            "errorLevel":"ERROR",
-            "section":"Chapter 5.2",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#text-profile"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1) - Text\n                Profile, Version 2017-07-13",
-            "nameAcronym":"IMSC1.0.1-Text",
-            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
-            "errorLevel":"ERROR",
-            "section":"Chapter 5.2",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#text-profile"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1 - Text Profile, Version 2017-10-17",
-            "nameAcronym":"IMSC1.1-Text (Beta)",
-            "text":"The Text Profile consists of Sections 6. Supported Features and Extensions, 7.\n                Common Provisions and 8. Text Profile Provisions.",
-            "errorLevel":"ERROR",
-            "section":"Chapter 5.2",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#text-profile"
-          }
-        ],
-        "tags":[
-          {
-            "shortDesc":"Prohibited values",
-            "longDesc":"Prohibited values",
-            "type":"Error type"
-          }
-        ],
-        "errors":[
-          {
-            "messages":{
-              "messageMain":"\n            Assertion: The ttp:timeBase attribute has the following value: 'media'\n                Error Information: The value of the attribute 'ttp:timeBase' is 'smpte'.",
-              "messageAssertion":"The ttp:timeBase attribute has the following value: 'media'",
-              "messageDiagnosticsAll":"The value of the attribute 'ttp:timeBase' is 'smpte'."
-            },
-            "locations":{
-              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/@*[local-name()='timeBase' and namespace-uri()='http:\/\/www.w3.org\/ns\/ttml#parameter']",
-              "humanXPATH":"\/tt:tt\/@ttp:timeBase",
-              "preview":"<tt:tt ttp:timeBase=\"smpte\" ttp:dropMode=\"nonDrop\" xml:lang=\"de\" ttp:cellResolution=\"50 30\" xml:space=\"default\" ttp:frameRate=\"50\">\n   <tt:head>\n      <tt:metadata>\n         <ebuttm:documentMetadata>\n            <ebuttm:conformsToStandard>urn:ebu:tt:distribution:2014-01<\/ebuttm:conformsToStandard>\n […]"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "uuid":"cfadd627-688e-4dcf-9694-9e77a491eccf",
-      "errorCategory":{
-        "constraintID":"d1e65",
-        "title":"tts:extent not significant (TTML1)",
-        "shortUserDesc":"The attribute tts:extent has only significance on the following\n                elements: tt:region (or on a tt:set child of it), tt:style,\n                tt:tt.",
-        "longUserDesc":"A style property has only effect on the rendered content if one or\n                more of the following cases are true: It is specified on an element where it\n                applies. It can be inherited to an element where it applies. It is specified on a\n                tt:set element which is the child of a content element where it\n                applies.",
-        "specs":[
-          {
-            "name":"Timed Text Markup Language 1 (TTML1) (Second Edition), Version 2013-09-24",
-            "nameAcronym":"TTML1",
-            "text":"Applies to: tt, region",
-            "errorLevel":"WARNING",
-            "section":"Chapter 8.2.7",
-            "uri":"https:\/\/www.w3.org\/TR\/ttaf1-dfxp\/#style-attribute-extent"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1), Version 2016-04-21",
-            "nameAcronym":"IMSC1 Common",
-            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted in the profile; SHALL NOT include any vocabulary, syntax or attribute\n                value associated with a Feature or Extension whose disposition is prohibited in the\n                profile.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 4",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#conformance"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1) - Text\n                Profile, Version 2016-04-21",
-            "nameAcronym":"IMSC1-Text",
-            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 5.2",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1\/#text-profile"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1), Version 2017-07-13",
-            "nameAcronym":"IMSC1.0.1 Common",
-            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 4",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#conformance"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1) - Text\n                Profile, Version 2017-07-13",
-            "nameAcronym":"IMSC1.0.1-Text",
-            "text":"The Text Profile consists of Sections 6. Common Constraints and 7. Text\n                Profile Constraints.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 5.2",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.0.1\/#text-profile"
-          },
-          {
-            "name":"Netflix: Timed Text Style Guide: General Requirements, Version 2016-11-16",
-            "nameAcronym":"Netflix-General",
-            "text":"Subtitle and SDH files for all languages must be delivered in a TTML (.dfxp or\n                .xml) format, except for Japanese, which must be delivered in Videotron Lambda Cap\n                format.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 2",
-            "uri":"https:\/\/backlothelp.netflix.com\/hc\/en-us\/articles\/215758617-Timed-Text-Style-Guide-General-Requirements"
-          }
-        ],
-        "tags":[
-          {
-            "shortDesc":"Properties with no effect",
-            "longDesc":"Properties with no effect",
-            "type":"Error type"
-          }
-        ],
-        "errors":[
-          {
-            "messages":{
-              "messageMain":"\n            Assertion: The attribute tts:extent is defined on one of the following elements: tt:region (or on a tt:set child of it), tt:style, tt:tt.\n                Error Information: The attribute 'tts:extent' appears on the element 'tt:p'.",
-              "messageAssertion":"The attribute tts:extent is defined on one of the following elements: tt:region (or on a tt:set child of it), tt:style, tt:tt.",
-              "messageDiagnosticsAll":"The attribute 'tts:extent' appears on the element 'tt:p'."
-            },
-            "locations":{
-              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][3]\/@*[local-name()='extent' and namespace-uri()='http:\/\/www.w3.org\/ns\/ttml#styling']",
-              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[3]\/@tts:extent",
-              "preview":"<tt:p begin=\"00:00:13.560\" end=\"00:00:18.640\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub2\" tts:origin=\"10% 10%\" tts:extent=\"80% 80%\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">But that's no reason to<\/tt:span>\n            <tt:br\/>\n            <tt:span style=\"WhiteOnBlack[…]"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "uuid":"78da2099-7cd2-4baf-b308-e8416503b1a1",
-      "errorCategory":{
-        "constraintID":"d1e65a",
-        "title":"tts:extent not significant (TTML2)",
-        "shortUserDesc":"The attribute tts:extent has only significance on the following\n                elements: tt:region (or on a tt:set child of it), tt:style, tt:tt,\n                tt:initial.",
-        "longUserDesc":"A style property has only effect on the rendered content if one or\n                more of the following cases are true: It is specified on an element where it\n                applies. It can be inherited to an element where it applies. It is specified on a\n                tt:set element which is the child of a content element where it\n                applies.",
-        "specs":[
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
-            "nameAcronym":"IMSC1.1 Common (Beta)",
-            "text":"All features specified in [TTML2] are prohibited unless specified\n                    otherwise below. [The feature #region-implied-animation is not specified] [The\n                    feature] #extent-image [is] prohibited.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 6",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#supported-features-and-extensions"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
-            "nameAcronym":"IMSC1.1 Common (Beta)",
-            "text":"A Document Instance that conforms to a profile defined herein: SHALL satisfy\n                all normative provisions specified by the profile; MAY include any vocabulary,\n                syntax or attribute value associated with a Feature or Extension whose disposition\n                is permitted or optional in the profile; SHALL NOT include any vocabulary, syntax or\n                attribute value associated with a Feature or Extension whose disposition is\n                prohibited in the profile.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 4",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#conformance"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1 - Text Profile, Version 2017-10-17",
-            "nameAcronym":"IMSC1.1-Text (Beta)",
-            "text":"The Text Profile consists of Sections 6. Supported Features and Extensions, 7.\n                Common Provisions and 8. Text Profile Provisions.",
-            "errorLevel":"WARNING",
-            "section":"Chapter 5.2",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#text-profile"
-          }
-        ],
-        "tags":[
-          {
-            "shortDesc":"Properties with no effect",
-            "longDesc":"Properties with no effect",
-            "type":"Error type"
-          }
-        ],
-        "errors":[
-          {
-            "messages":{
-              "messageMain":"\n            Assertion: The attribute tts:extent is defined on one of the following elements: tt:region (or on a tt:set child of it), tt:style, tt:tt, tt:initial.\n                Error Information: The attribute 'tts:extent' appears on the element 'tt:p'.",
-              "messageAssertion":"The attribute tts:extent is defined on one of the following elements: tt:region (or on a tt:set child of it), tt:style, tt:tt, tt:initial.",
-              "messageDiagnosticsAll":"The attribute 'tts:extent' appears on the element 'tt:p'."
-            },
-            "locations":{
-              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][3]\/@*[local-name()='extent' and namespace-uri()='http:\/\/www.w3.org\/ns\/ttml#styling']",
-              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[3]\/@tts:extent",
-              "preview":"<tt:p begin=\"00:00:13.560\" end=\"00:00:18.640\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub2\" tts:origin=\"10% 10%\" tts:extent=\"80% 80%\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">But that's no reason to<\/tt:span>\n            <tt:br\/>\n            <tt:span style=\"WhiteOnBlack[…]"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "uuid":"a6ecafee-ed79-41ca-96a6-f456f72d21bf",
-      "errorCategory":{
-        "constraintID":"w0ab1b5d213",
-        "title":"Minimum frame gap",
-        "shortUserDesc":"The gap between two adjacent subtitles must be at least two\n                frames.",
-        "longUserDesc":"There has to be a reasonable amount of gap between two adjacent\n                subtitles where no subtitle is displayed.",
-        "specs":[
-          {
-            "name":"Netflix: Timed Text Style Guide: General Requirements, Version 2016-11-16",
-            "nameAcronym":"Netflix-General",
-            "text":"2 frames minimum (regardless of frame rate)",
-            "errorLevel":"ERROR",
-            "section":"Chapter 3",
-            "uri":"https:\/\/backlothelp.netflix.com\/hc\/en-us\/articles\/215758617-Timed-Text-Style-Guide-General-Requirements"
-          }
-        ],
-        "tags":[
-          {
-            "shortDesc":"Inconsistent values",
-            "longDesc":"Inconsistent values",
-            "type":"Error type"
-          },
-          {
-            "shortDesc":"Timing",
-            "longDesc":"Timing related issues",
-            "type":"Editorial constraints"
-          }
-        ],
-        "errors":[
-          {
-            "messages":{
-              "messageMain":"\n            Assertion: The gap between two adjacent subtitles is at least two frames.\n                Error Information: The gap between the current and the following subtitle is 0 frame(s) given a frame rate of 50 fps.",
-              "messageAssertion":"The gap between two adjacent subtitles is at least two frames.",
-              "messageDiagnosticsAll":"The gap between the current and the following subtitle is 0 frame(s) given a frame rate of 50 fps."
-            },
-            "locations":{
-              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]",
-              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[1]",
-              "preview":"<tt:p begin=\"00:00:00.800\" end=\"00:00:01.800\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub0\"\/>"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "uuid":"fa920a6d-c729-4f39-a838-870c3ecbef51",
-      "errorCategory":{
-        "constraintID":"w0ab1b7c66",
-        "title":"No inline animation",
-        "shortUserDesc":"The attributes tts:disparity, tts:extent, tts:origin and\n                tts:position shall not be present on any of the following elements: tt:div,\n                tt:p.",
-        "longUserDesc":"IMSC 1.1 does not allow inline animations using implied regions.\n                Such regions are defined by specifying any of the mentioned attributes on a block\n                content element.",
-        "specs":[
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1, Version 2017-10-17",
-            "nameAcronym":"IMSC1.1 Common (Beta)",
-            "text":"All features specified in [TTML2] are prohibited unless specified\n                    otherwise below. [The feature #region-implied-animation is not\n                    specified]",
-            "errorLevel":"ERROR",
-            "section":"Chapter 6",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#supported-features-and-extensions"
-          },
-          {
-            "name":"TTML Profiles for Internet Media Subtitles and Captions 1.1 - Text Profile, Version 2017-10-17",
-            "nameAcronym":"IMSC1.1-Text (Beta)",
-            "text":"The Text Profile consists of Sections 6. Supported Features and Extensions, 7.\n                Common Provisions and 8. Text Profile Provisions.",
-            "errorLevel":"ERROR",
-            "section":"Chapter 5.2",
-            "uri":"https:\/\/www.w3.org\/TR\/ttml-imsc1.1\/#text-profile"
-          }
-        ],
-        "tags":[
-          {
-            "shortDesc":"Prohibited vocabulary",
-            "longDesc":"Prohibited vocabulary",
-            "type":"Error type"
-          }
-        ],
-        "errors":[
-          {
-            "messages":{
-              "messageMain":"\n            Assertion: The attribute tts:origin is not used on any of the following elements: tt:div, tt:p.\n                Error Information: The attribute 'tts:origin' appears on the element 'tt:p'.",
-              "messageAssertion":"The attribute tts:origin is not used on any of the following elements: tt:div, tt:p.",
-              "messageDiagnosticsAll":"The attribute 'tts:origin' appears on the element 'tt:p'."
-            },
-            "locations":{
-              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][3]\/@*[local-name()='origin' and namespace-uri()='http:\/\/www.w3.org\/ns\/ttml#styling']",
-              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[3]\/@tts:origin",
-              "preview":"<tt:p begin=\"00:00:13.560\" end=\"00:00:18.640\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub2\" tts:origin=\"10% 10%\" tts:extent=\"80% 80%\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">But that's no reason to<\/tt:span>\n            <tt:br\/>\n            <tt:span style=\"WhiteOnBlack[…]"
-            }
-          },
-          {
-            "messages":{
-              "messageMain":"\n            Assertion: The attribute tts:extent is not used on any of the following elements: tt:div, tt:p.\n                Error Information: The attribute 'tts:extent' appears on the element 'tt:p'.",
-              "messageAssertion":"The attribute tts:extent is not used on any of the following elements: tt:div, tt:p.",
-              "messageDiagnosticsAll":"The attribute 'tts:extent' appears on the element 'tt:p'."
-            },
-            "locations":{
-              "resolvableXPATH":"\/*:tt[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:body[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:div[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][1]\/*:p[namespace-uri()='http:\/\/www.w3.org\/ns\/ttml'][3]\/@*[local-name()='extent' and namespace-uri()='http:\/\/www.w3.org\/ns\/ttml#styling']",
-              "humanXPATH":"\/tt:tt\/tt:body\/tt:div\/tt:p[3]\/@tts:extent",
-              "preview":"<tt:p begin=\"00:00:13.560\" end=\"00:00:18.640\" style=\"textAlignCenter\" region=\"bottomAligned\" xml:id=\"sub2\" tts:origin=\"10% 10%\" tts:extent=\"80% 80%\">\n            <tt:span style=\"WhiteOnBlack doubleHeight\">But that's no reason to<\/tt:span>\n            <tt:br\/>\n            <tt:span style=\"WhiteOnBlack[…]"
-            }
-          }
-        ]
+        }]
       }
     }
   ],
-  "filename":"subcheck_imsc1_1.xml",
-  "totalWords":"45",
-  "filesize":"7 KB",
-  "wpm":"60.21"
+  "filename": "instance.xml",
+  "totalWords": "0",
+  "filesize": "232 Bytes"
 }

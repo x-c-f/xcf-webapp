@@ -21,23 +21,11 @@
                 You may also click the gray area to browse your computer.<br />
                 <small>We will only store your file temporarily—a few seconds at most—to analyze its contents.</small>
                 <div class="text-center">
-                  You may also load one of our example reports:<br /><br />
-                  <div :class="{ 'col-xs-2 col-xs-offset-3': isInitial, 'col-xs-12 mb-2': !isInitial }">
+                  You may also load our example report:<br /><br />
+                  <div :class="{ 'col-xs-2 col-xs-offset-4': isInitial, 'col-xs-12 mb-2': !isInitial }">
                     <div class="btn-group btn-group-sm">
                       <button type="button" @click="loadEaxmple('example-1')" class="btn btn-default">Example 1</button>
-                      <a href="https://git.basex.io/snippets/47" target="_blank" class="btn btn-default" title="Show Source"><i class="fa fa-file-code-o"/></a>
-                    </div>
-                  </div>
-                  <div :class="{ 'col-xs-2': isInitial, 'col-xs-12  mb-2': !isInitial }">
-                    <div class="btn-group btn-group-sm">
-                      <button type="button" @click="loadEaxmple('example-2')" class="btn btn-default">Example 2</button>
-                      <a href="https://git.basex.io/snippets/48" target="_blank" class="btn btn-default" title="Show Source"><i class="fa fa-file-code-o"/></a>
-                    </div>
-                  </div>
-                  <div :class="{ 'col-xs-2': isInitial, 'col-xs-12  mb-2': !isInitial }">
-                    <div class="btn-group btn-group-sm">
-                      <button type="button" @click="loadEaxmple('example-3')" class="btn btn-default">Example 3</button>
-                      <a href="https://git.basex.io/snippets/49" target="_blank" class="btn btn-default" title="Show Source"><i class="fa fa-file-code-o"/></a>
+                      <a href="https://github.com/IRT-Open-Source/xcf_suite_sample/blob/master/instance.xml" target="_blank" class="btn btn-default" title="Show Source"><i class="fa fa-file-code-o"/></a>
                     </div>
                   </div>
                 </div>
@@ -47,7 +35,7 @@
           </div>
           <transition name="appear" mode="out-in">
             <div class="grow cut-content" :class="{ 'col-xs-9': !isInitial, 'col-xs-0': isInitial }">
-            <div key="failed" v-if="isFailed || isForbidden">
+            <div key="failed" v-if="isFailed">
               <error-panel :message="uploadError"/>
             </div>
             <div key="report" v-else-if="!isSaving && !isInitial">
@@ -92,9 +80,6 @@ export default {
   computed: {
     showToken () {
       return this.$store.state.showToken;
-    },
-    authToken () {
-      return this.$store.state.authToken;
     },
     FILTERS () {
       return this.$store.state.FILTERS;
@@ -201,7 +186,6 @@ export default {
       this.$store.commit('setActive', 0);
       if (!fileList.length) return;
       formData.append(fieldName, fileList[0], fileList[0].name);
-      formData.append("token", this.$store.state.authToken.token);
       this.save(formData);
       document.getElementById('uploadform').reset();
     }
