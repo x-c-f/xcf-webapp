@@ -2,6 +2,13 @@
 
 This is both the front- and backend for the XCF-Web-Application.
 
+## Related repositories
+
+The actual XCF itself is contained in the [`xcf` Git repository](https://github.com/IRT-Open-Source/xcf) and
+provides necessary helper files.
+
+
+
 ## Running the application
 
 ### First time run
@@ -80,3 +87,9 @@ cd backend/app && bin/basexhttp
 cd frontend && npm install && npm run build && cd ..
 docker build -t xcf-check . && docker run -p 80:8984 xcf-check
 ```
+
+## License
+The XCF TTML suite offered by Institut für Rundfunktechnik GmbH is
+subject to the [MIT license](LICENSE).
+
+The web frontend is offered by [BaseX GmbH](https://www.basex.org) and licensed under the [MIT license](LICENSE).
