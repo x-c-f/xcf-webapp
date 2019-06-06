@@ -51,7 +51,7 @@ In short:
 For development start `webpack-dev-server`:
 
 ```bash
-cd frontend && npm install && npm run build
+cd frontend && npm install && npm run dev
 ```
 
 alongside the `basexhttp`-backend:
