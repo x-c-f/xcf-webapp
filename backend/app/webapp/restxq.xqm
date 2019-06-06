@@ -8,8 +8,9 @@ module namespace page = 'http://basex.org/modules/web-page';
 declare variable $page:xslt-cache := map { 'cache': true() };
 
 declare variable $page:CONFIG := 
-  if(file:exists('config.xml')) then 
-    let $doc := fetch:xml('config.xml')
+  let $file := if(file:exists("config.xml")) then "config.xml" else "config.default.xml"
+  return if(file:exists($file)) then 
+    let $doc := fetch:xml($file)
     return $doc update (
       insert node attribute constraint { $doc/config/xcf-rules || "constraints.xml" } as first into config,
       replace node config/xcf-engine with element xcf-engine {fetch:xml(config/xcf-engine || "reportview.xsl")},

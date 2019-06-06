@@ -12,7 +12,8 @@ provides necessary helper files.
 ## Running the application
 
 ### First time run
-To run the application you have to create a config file or rename our predefined config-file located in the `backend`-folder.
+
+To run the application you can either use the provided `config.default.xml` or create your own config file or by copying the deafult config:
 
 ```bash
 cp backend/app/config.default.xml backend/app/config.xml
