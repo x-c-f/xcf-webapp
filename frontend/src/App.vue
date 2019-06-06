@@ -12,27 +12,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">sub<em>check</em></a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li>
-                  <router-link :to="{ name: 'Subcheck', params: {} }">Home</router-link>
-                </li>
-                <li class="divider"><a>&nbsp;</a></li>
-
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                <li>
-                  <a style="color:#3dcccc;font-size:110%" href="mailto:feedback@subcheck.io?subject=Feedback">
-                    <i class="fa fa-envelope-o"/> Feedback</a>
-                </li>
-
-                <li>
-                  <router-link :to="{ name: 'Imprint', params: {} }">Impressum / Imprint</router-link>
-                </li>
-
-              </ul>
+              <a class="navbar-brand" href="#">xc<em>f</em></a>
             </div>
           </div>
         </nav>
@@ -41,7 +21,7 @@
     <router-view></router-view>
     <div class="row">
       <div class="col-xs-12">
-        <h4 class="text-right" style="padding-top:1em;">subcheck powered by
+        <h4 class="text-right" style="padding-top:1em;">XCF powered by
           <a href="http://www.irt.de" target="_blank"><img class="img" src="../static/irt.png"/></a>
           <a href="http://www.basexgmbh.de" target="_blank"><img class="img" src="../static/BaseX_512px.png"/></a>
 

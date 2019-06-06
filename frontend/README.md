@@ -1,6 +1,6 @@
-# subcheck.io
+# XCF
 
-> Subcheck Visual Frontend
+> XCF Visual Frontend
 
 ## Build Setup
 

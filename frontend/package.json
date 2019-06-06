@@ -1,7 +1,7 @@
 {
-  "name": "subcheck.io",
+  "name": "xcf",
   "version": "1.0.0",
-  "description": "Subcheck Visual Frontend",
+  "description": "XCF — Visual Frontend",
   "author": "Michael <ms@basex.org>",
   "private": true,
   "scripts": {

@@ -1,11 +1,6 @@
 <template>
       <div class="row">
-        <div class="col-xs-12" v-show="isForbidden">
-          <!-- <div v-if="!authToken.isValid" class="alert alert-info" role="alert">
-            <h2>Ooops! There was a problem. Please, try later.</h2>
-          </div> -->
-        </div>
-        <div v-show="!isForbidden">
+        <div >
           <div  class="col-xs-12">
             <tags-filter :hasFilters="hasFilters" :tags="tags" :FILTERS="FILTERS"/>
           </div>
@@ -22,7 +17,7 @@
                   <span class="sr-only">Loading...</span>
                 </p>
               <p :class="{dimmmed: isSaving }">
-                Drag your subtitle file here to begin.<br>
+                Drag your XML file here to begin.<br>
                 You may also click the gray area to browse your computer.<br />
                 <small>We will only store your file temporarily—a few seconds at most—to analyze its contents.</small>
                 <div class="text-center">
@@ -79,14 +74,13 @@ const STATUS_INITIAL = 0;
 const STATUS_SAVING = 1;
 const STATUS_SUCCESS = 2;
 const STATUS_FAILED = 3;
-const STATUS_FORBIDDEN = 4;
 const protocol = location.protocol;
 const slashes = protocol.concat("//");
 const port = window.location.port === "80" || window.location.hostname === "443" ? "" : ":" + window.location.port;
 const host = slashes.concat(window.location.hostname) + port;
 const URL = process.env.NODE_ENV === 'production' ? host : "http://localhost:8080";
 export default {
-  name: 'subcheck',
+  name: 'XCF',
   components: {
     ValidationResults,
     TagsFilter,
@@ -131,11 +125,7 @@ export default {
     },
     isFailed () {
       return this.currentStatus === STATUS_FAILED;
-    },
-    isForbidden () {
-      return this.currentStatus === STATUS_FORBIDDEN;
     }
-
   },
 
   methods: {
@@ -146,7 +136,6 @@ export default {
       this.uploadedFiles = [];
       this.uploadError = null;
       this.$store.commit('setActive', 0);
-      this.$store.commit('authToken', {"token": "token", "decoded": "decoded", isValid: true});
       fetch(URL + "/app/tags/").then(data => {
         data.json().then(tags => {
           this.$store.commit('tags', tags.Data);
@@ -172,12 +161,6 @@ export default {
       this.currentStatus = STATUS_SAVING;
       var data;
       switch (name) {
-        case 'example-2':
-          data = require('../store/example-2.json');
-          break;
-        case 'example-3':
-          data = require('../store/example-3.json');
-          break;
         case 'example-1':
           data = require('../store/example-1.json');
           break;
@@ -233,7 +216,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style >
 .appear-enter-active > .cut-content  {
   overflow: hidden;
@@ -246,10 +228,6 @@ ul {
   padding: 0;
 }
 
-li {
-  /*display: inline-block;
-  margin: 0 10px;*/
-}
 /** File Upload */
 .col-xs-12>form>.dropbox {
     font-size: 140%;
