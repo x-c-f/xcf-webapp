@@ -19,6 +19,8 @@ To run the application you can either use the provided `config.default.xml` or c
 cp backend/app/config.default.xml backend/app/config.xml
 ```
 
+> **By default:** `config.default.xml` is used and no further steps are required.
+
 ### About the config file
 
 Applications can be run from arbitrary URLs, local installations are possible.
@@ -59,7 +61,7 @@ In short:
 For development start `webpack-dev-server`:
 
 ```bash
-cd frontend && npm install && npm run dev
+cd frontend && npm -s install && npm run dev
 ```
 
 alongside the `basexhttp`-backend:
@@ -74,7 +76,7 @@ The frontend will be served at [localhost:8080](http://localhost:8080) and reque
 
 ```bash
 # Build the frontend
-cd frontend && npm install && npm run build && cd ..
+cd frontend && npm -s install && npm run build && cd ..
 cp frontend/dist/index.html backend/app/webapp/
 cp -r frontend/dist/assets backend/app/webapp/
 # Start basexhttp
@@ -85,7 +87,7 @@ cd backend/app && bin/basexhttp
 
 ```bash
 # Build the frontend
-cd frontend && npm install && npm run build && cd ..
+cd frontend && npm -s install && npm run build && cd ..
 docker build -t xcf-check . && docker run -p 80:8984 xcf-check
 ```
 
