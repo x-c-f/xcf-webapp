@@ -13,10 +13,16 @@ provides necessary helper files.
 
 ### First time run
 
-To run the application you can either use the provided `config.default.xml` or create your own config file or by copying the deafult config:
+To run the application you can either use the provided `config.default.xml` or create your own config file `config.xml`. You can copy the default config and take it as base for your customized configuration:
 
 ```bash
 cp backend/app/config.default.xml backend/app/config.xml
+```
+
+or on Windows OS:
+
+```bat
+copy backend\app\config.default.xml backend\app\config.xml
 ```
 
 > **By default:** `config.default.xml` is used and no further steps are required.
@@ -49,8 +55,6 @@ For more information on what these files do, please refer to:
 
 In short: 
 
-
-
 * `rules_compiled.xsl` contains a transformation that performs the actual checking
 * `constraints.xml` contains detailed information for a given error, that will be added to the report
 * `reportview.xsl` is used to convert a report a more user friendly format
@@ -70,7 +74,14 @@ alongside the `basexhttp`-backend:
 cd backend/app && bin/basexhttp
 ````
 
+On Windows OS:
+
+```bat
+cd backend\app && bin\basexhttp
+```
+
 The frontend will be served at [localhost:8080](http://localhost:8080) and requests to the BaseX HTTP backend will be proxied automatically by webpack.
+
 
 ### To Build from Source and run in production
 
@@ -81,6 +92,14 @@ cp frontend/dist/index.html backend/app/webapp/
 cp -r frontend/dist/assets backend/app/webapp/
 # Start basexhttp
 cd backend/app && bin/basexhttp
+```
+Or on Windows OS:
+
+```bat
+cd frontend && npm -s install && npm run build && cd ..
+copy frontend\dist\index.html backend\app\webapp\
+xcopy frontend\dist\assets backend\app\webapp\
+cd backend\app && bin\basexhttp
 ```
 
 ### To build a docker container
