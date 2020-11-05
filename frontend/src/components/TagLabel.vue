@@ -30,7 +30,7 @@
   </transition-group>
 </template>
 <script>
-require("font-awesome-webpack!../../font-awesome.config.js");
+// require("font-awesome-webpack!../../font-awesome.config.js");
 export default {
   name: "TagLabel",
   props: ["filter", "FILTERS", "TagGroup"],

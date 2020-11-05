@@ -44,6 +44,7 @@
 <script>
 import { store } from "./store/store.js";
 import "@/assets/css/bootstrap.css";
+import "@/assets/css/font-awesome.css";
 
 export default {
   name: "app",

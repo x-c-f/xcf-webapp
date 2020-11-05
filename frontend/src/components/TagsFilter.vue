@@ -53,7 +53,7 @@
   </div>
 </template>
 <script>
-require("font-awesome-webpack!../../font-awesome.config.js");
+// require("font-awesome-webpack!../../font-awesome.config.js");
 import TagLabel from "./TagLabel";
 export default {
   name: "tagsFilter",
