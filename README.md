@@ -7,8 +7,6 @@ This is both the front- and backend for the XCF-Web-Application.
 The actual XCF itself is contained in the [`xcf` Git repository](https://github.com/IRT-Open-Source/xcf) and
 provides necessary helper files.
 
-
-
 ## Running the application
 
 ### First time run
@@ -51,28 +49,28 @@ Make sure your `engine` & `rules`-folders contain at least the following files:
     └── rules_config.xml
 ```
 
-For more information on what these files do, please refer to: 
+For more information on what these files do, please refer to:
 
-In short: 
+In short:
 
-* `rules_compiled.xsl` contains a transformation that performs the actual checking
-* `constraints.xml` contains detailed information for a given error, that will be added to the report
-* `reportview.xsl` is used to convert a report a more user friendly format
-* `rules_config.xml` can be used to configure which checkboxes in the web-fronted are initially checked
+- `rules_compiled.xsl` contains a transformation that performs the actual checking
+- `constraints.xml` contains detailed information for a given error, that will be added to the report
+- `reportview.xsl` is used to convert a report a more user friendly format
+- `rules_config.xml` can be used to configure which checkboxes in the web-fronted are initially checked
 
 ### Development
 
-For development start `webpack-dev-server`:
+For development start the frontend dev server:
 
 ```bash
-cd frontend && npm -s install && npm run dev
+cd frontend && yarn && yarn serve
 ```
 
 alongside the `basexhttp`-backend:
 
 ```bash
 cd backend/app && bin/basexhttp
-````
+```
 
 On Windows OS:
 
@@ -81,26 +79,6 @@ cd backend\app && bin\basexhttp
 ```
 
 The frontend will be served at [localhost:8080](http://localhost:8080) and requests to the BaseX HTTP backend will be proxied automatically by webpack.
-
-
-### To Build from Source and run in production
-
-```bash
-# Build the frontend
-cd frontend && npm -s install && npm run build && cd ..
-cp frontend/dist/index.html backend/app/webapp/
-cp -r frontend/dist/assets backend/app/webapp/
-# Start basexhttp
-cd backend/app && bin/basexhttp
-```
-Or on Windows OS:
-
-```bat
-cd frontend && npm -s install && npm run build && cd ..
-copy frontend\dist\index.html backend\app\webapp\
-xcopy frontend\dist\assets backend\app\webapp\
-cd backend\app && bin\basexhttp
-```
 
 ### To build a docker container
 
@@ -111,6 +89,5 @@ docker build -t xcf-check . && docker run -p 80:8984 xcf-check
 ```
 
 ## License
-
 
 The web frontend is offered by [BaseX GmbH](https://www.basex.org) and licensed under the [MIT license](LICENSE).

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app
-  xmlns="http://java.sun.com/xml/ns/javaee"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-  version="2.5">
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
   <display-name>BaseX: The XML Database and XQuery Processor</display-name>
   <description>HTTP Services</description>
@@ -102,14 +99,14 @@
   </servlet-mapping>
 
   <!-- REST Service (can be deactivated by removing this entry) -->
-  <servlet>
+  <!-- <servlet>
     <servlet-name>REST</servlet-name>
     <servlet-class>org.basex.http.rest.RESTServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>REST</servlet-name>
     <url-pattern>/rest/*</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
 
   <!-- WebDAV Service (can be deactivated by removing this entry) -->
   <servlet>
