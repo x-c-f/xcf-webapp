@@ -1,207 +1,245 @@
 <template>
-      <div class="row">
-        <div >
-          <div  class="col-xs-12">
-            <tags-filter :hasFilters="hasFilters" :tags="tags" :FILTERS="FILTERS"/>
-          </div>
-          <div class=""><hr style="margin:5px 0"/></div>
-          <div class="grow" :class="{ 'col-xs-3': !isInitial, 'col-xs-12': isInitial }">
-            <form id="uploadform" class="upload" enctype="multipart/form-data" novaliadate>
-              <!-- <h2>Upload File</h2> -->
-              <div class="dropbox" :class="{'uploading': isSaving}">
-                <input type="file" :name="uploadFieldName" :disabled="isSaving"
-                @change="filesChange($event.target.name, $event.target.files);"
-                class="input-file">
-                <p class="overlay" v-if="isSaving">
-                  <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-                  <span class="sr-only">Loading...</span>
-                </p>
-              <p :class="{dimmmed: isSaving }">
-                Drag your XML file here to begin.<br>
-                You may also click the gray area to browse your computer.<br />
-                <small>We will only store your file temporarily—a few seconds at most—to analyze its contents.</small>
-                <div class="text-center">
-                  You may also load our example report:<br /><br />
-                  <div :class="{ 'col-xs-2 col-xs-offset-4': isInitial, 'col-xs-12 mb-2': !isInitial }">
-                    <div class="btn-group btn-group-sm">
-                      <button type="button" @click="loadEaxmple('example-1')" class="btn btn-default">Example 1</button>
-                      <a href="https://github.com/IRT-Open-Source/xcf_suite_sample/blob/master/instance.xml" target="_blank" class="btn btn-default" title="Show Source"><i class="fa fa-file-code-o"/></a>
-                    </div>
-                  </div>
-                </div>
-              </p>
-            </div>
-            </form>
-          </div>
-          <transition name="appear" mode="out-in">
-            <div class="grow cut-content" :class="{ 'col-xs-9': !isInitial, 'col-xs-0': isInitial }">
-            <div key="failed" v-if="isFailed">
-              <error-panel :message="uploadError"/>
-            </div>
-            <div key="report" v-else-if="!isSaving && !isInitial">
-              <h2>Validation Results <small v-if="report.length>0">{{filtered.length}} of {{ report.length }}</small></h2>
-              <validation-results :filtered="filtered" :FILTERS="FILTERS" :report="report" :rawReport="rawReport"/>
-            </div>
-            <div  v-else-if="isSaving">
-              <h2>Working <i class="fa fa-gears"/></h2>
-              <p>Your file is being processed…</p>
-            </div>
-          </div>
-        </transition>
+  <div class="row">
+    <div>
+      <div class="col-xs-12">
+        <tags-filter :hasFilters="hasFilters" :tags="tags" :FILTERS="FILTERS" />
       </div>
+      <div class=""><hr style="margin:5px 0" /></div>
+      <div
+        class="grow"
+        :class="{ 'col-xs-3': !isInitial, 'col-xs-12': isInitial }"
+      >
+        <form
+          id="uploadform"
+          class="upload"
+          enctype="multipart/form-data"
+          novaliadate
+        >
+          <!-- <h2>Upload File</h2> -->
+          <div class="dropbox" :class="{ uploading: isSaving }">
+            <input
+              type="file"
+              :name="uploadFieldName"
+              :disabled="isSaving"
+              @change="filesChange($event.target.name, $event.target.files)"
+              class="input-file"
+            />
+            <p class="overlay" v-if="isSaving">
+              <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+              <span class="sr-only">Loading...</span>
+            </p>
+            <p :class="{ dimmmed: isSaving }">
+              Drag your XML file here to begin.<br />
+              You may also click the gray area to browse your computer.<br />
+              <small
+                >We will only store your file temporarily—a few seconds at
+                most—to analyze its contents.</small
+              >
+            </p>
+
+            <div class="text-center mt-5 d-block">
+              You may also load our example report:<br /><br />
+              <div
+                :class="{
+                  'col-xs-2 col-xs-offset-4': isInitial,
+                  'col-xs-12 mb-2': !isInitial
+                }"
+              >
+                <div class="btn-group btn-group-sm">
+                  <button
+                    type="button"
+                    @click="loadEaxmple('example-1')"
+                    class="btn btn-default"
+                  >
+                    Example 1
+                  </button>
+                  <a
+                    href="https://github.com/IRT-Open-Source/xcf_suite_sample/blob/master/instance.xml"
+                    target="_blank"
+                    class="btn btn-default"
+                    title="Show Source"
+                    ><i class="fa fa-file-code-o"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <transition name="appear" mode="out-in">
+        <div
+          class="grow cut-content"
+          :class="{ 'col-xs-9': !isInitial, 'col-xs-0': isInitial }"
+        >
+          <div key="failed" v-if="isFailed">
+            <error-panel :message="uploadError" />
+          </div>
+          <div key="report" v-else-if="!isSaving && !isInitial">
+            <h2>
+              Validation Results
+              <small v-if="report.length > 0"
+                >{{ filtered.length }} of {{ report.length }}</small
+              >
+            </h2>
+            <validation-results
+              :filtered="filtered"
+              :FILTERS="FILTERS"
+              :report="report"
+              :rawReport="rawReport"
+            />
+          </div>
+          <div v-else-if="isSaving">
+            <h2>Working <i class="fa fa-gears" /></h2>
+            <p>Your file is being processed…</p>
+          </div>
+        </div>
+      </transition>
+    </div>
   </div>
 </template>
 
 <script>
-import ErrorPanel from './Panel.vue';
-import ValidationResults from './ValidationResults.vue';
-import TagsFilter from './TagsFilter.vue';
+import ErrorPanel from "./Panel.vue";
+import ValidationResults from "./ValidationResults.vue";
+import TagsFilter from "./TagsFilter.vue";
 // import f from "../store/more";
 
 const STATUS_INITIAL = 0;
 const STATUS_SAVING = 1;
 const STATUS_SUCCESS = 2;
 const STATUS_FAILED = 3;
-const protocol = location.protocol;
-const slashes = protocol.concat("//");
-const port = window.location.port === "80" || window.location.hostname === "443" ? "" : ":" + window.location.port;
-const host = slashes.concat(window.location.hostname) + port;
-const URL = process.env.NODE_ENV === 'production' ? host : "http://localhost:8080";
+const URL = "";
 export default {
-  name: 'XCF',
+  name: "XCF",
   components: {
     ValidationResults,
     TagsFilter,
     ErrorPanel
   },
-  mounted () {
+  mounted() {
     this.reset();
   },
   computed: {
-    showToken () {
+    showToken() {
       return this.$store.state.showToken;
     },
-    FILTERS () {
+    FILTERS() {
       return this.$store.state.FILTERS;
     },
-    hasFilters () {
+    hasFilters() {
       return this.$store.getters.hasFilters;
     },
-    tags () {
+    tags() {
       return this.$store.getters.filteredTags;
     },
-    filtered () {
+    filtered() {
       return this.$store.getters.filteredReport;
     },
-    report () {
+    report() {
       return this.$store.state.report;
     },
-    rawReport () {
+    rawReport() {
       return this.$store.state.rawReport;
     },
-    isInitial () {
+    isInitial() {
       return this.currentStatus === STATUS_INITIAL;
     },
-    isSaving () {
+    isSaving() {
       return this.currentStatus === STATUS_SAVING;
     },
-    isSuccess () {
+    isSuccess() {
       return this.currentStatus === STATUS_SUCCESS;
     },
-    isFailed () {
+    isFailed() {
       return this.currentStatus === STATUS_FAILED;
     }
   },
 
   methods: {
-    reset () {
+    reset() {
       // reset form to initial state
 
       this.currentStatus = STATUS_INITIAL;
       this.uploadedFiles = [];
       this.uploadError = null;
-      this.$store.commit('setActive', 0);
+      this.$store.commit("setActive", 0);
       fetch(URL + "/app/tags/").then(data => {
         data.json().then(tags => {
-          this.$store.commit('tags', tags.Data);
+          this.$store.commit("tags", tags.Data);
           const filters = {};
           tags.Data.Tags.map(t => {
             filters[t.TagGroup.type] = [];
             t.TagGroup.TagList.forEach(it => {
-              if (it.hasOwnProperty('selectFilterInitial') &&
-                it.selectFilterInitial
-              ) {
+              if (it["selectFilterInitial"] && it.selectFilterInitial) {
                 filters[t.TagGroup.type].push(it.ID);
               }
             });
           });
 
-          this.$store.commit('filter',
-            filters
-          );
+          this.$store.commit("filter", filters);
         });
       });
     },
-    loadEaxmple (name) {
+    loadEaxmple(name) {
       this.currentStatus = STATUS_SAVING;
       var data;
       switch (name) {
-        case 'example-1':
-          data = require('../store/example-1.json');
+        case "example-1":
+          data = require("../store/example-1.json");
           break;
       }
       var that = this;
-      window.setTimeout(function () {
+      window.setTimeout(function() {
         that.currentStatus = STATUS_SUCCESS;
-        that.$store.dispatch('report', data);
+        that.$store.dispatch("report", data);
       }, 700);
     },
-    save (formData) {
+    save(formData) {
       // upload data to the server
       this.currentStatus = STATUS_SAVING;
-      fetch(URL + "/app/validate-form-data",
-        {
-          "method": "POST",
-          "body": formData
-        }).then(data => {
+      fetch(URL + "/app/validate-form-data", {
+        method: "POST",
+        body: formData
+      })
+        .then(data => {
           return data.json();
         })
         .then(report => {
-          if (report.hasOwnProperty('desc') || report.hasOwnProperty('error')) {
+          if (report["desc"] || report["error"]) {
             throw new Error(report.desc + report.code || report.message);
           } else {
             this.currentStatus = STATUS_SUCCESS;
-            this.$store.dispatch('report', report);
+            this.$store.dispatch("report", report);
           }
         })
         .catch(err => {
           this.currentStatus = STATUS_FAILED;
-          this.$store.commit('report', []);
+          this.$store.commit("report", []);
           this.uploadError = err;
         });
     },
-    filesChange (fieldName, fileList) {
+    filesChange(fieldName, fileList) {
       // handle file changes
       var formData = new FormData();
-      this.$store.commit('setActive', 0);
+      this.$store.commit("setActive", 0);
       if (!fileList.length) return;
       formData.append(fieldName, fileList[0], fileList[0].name);
       this.save(formData);
-      document.getElementById('uploadform').reset();
+      document.getElementById("uploadform").reset();
     }
   },
   data: () => {
     return {
       currentStatus: STATUS_INITIAL,
       uploadError: null,
-      uploadFieldName: 'subtitle'
+      uploadFieldName: "subtitle"
     };
   }
 };
 </script>
 
-<style >
-.appear-enter-active > .cut-content  {
+<style>
+.appear-enter-active > .cut-content {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -213,8 +251,8 @@ ul {
 }
 
 /** File Upload */
-.col-xs-12>form>.dropbox {
-    font-size: 140%;
+.col-xs-12 > form > .dropbox {
+  font-size: 140%;
 }
 .mb-2 {
   margin-bottom: 2px;
@@ -226,6 +264,7 @@ ul {
   background: #efefef;
   color: dimgray;
   padding: 10px 10px;
+  padding-bottom: 40px;
   min-height: 200px; /* minimum height */
   position: relative;
   cursor: pointer;
@@ -239,7 +278,7 @@ ul {
   cursor: pointer;
 }
 div.col-xs-0 {
-  width:0 !important;
+  width: 0 !important;
 }
 .dropbox:hover {
   background: #cfcfcf; /* when mouse over to the drop zone, change color */
@@ -251,8 +290,8 @@ div.col-xs-0 {
   padding: 50px 0;
 }
 .padding-top {
- padding-top: 20px;
- margin:10px;
+  padding-top: 20px;
+  margin: 10px;
 }
 /* Animation */
 /* Enter and leave animations can use different */
@@ -263,7 +302,8 @@ div.col-xs-0 {
 .grow-enter-active {
   position: absolute;
 }
-.appear-enter-active, .appear-leave-active {
+.appear-enter-active,
+.appear-leave-active {
   transition: all 0.4s ease-in-out;
   overflow: hidden;
 }
@@ -276,21 +316,21 @@ div.col-xs-0 {
   /*width: 0%;*/
   /*height: 0;
   padding: 0;*/
-  transform: translate(0,-300px);
+  transform: translate(0, -300px);
   opacity: 0;
   transform-origin: bottom;
   overflow: hidden;
 }
 .overlay {
-  position:absolute;
-  left:40%;
+  position: absolute;
+  left: 40%;
 }
 p.dimmmed {
   color: #cfcfcf;
 }
 
 .uploading {
-  animation: pulse 1.5s  infinite;
+  animation: pulse 1.5s infinite;
 }
 @keyframes pulse {
   0% {
@@ -299,11 +339,9 @@ p.dimmmed {
 
   25% {
     border-top-color: #8d8d8d;
-
   }
   50% {
     border-right-color: #8d8d8d;
-
   }
 
   75% {

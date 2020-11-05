@@ -1,34 +1,40 @@
 <template>
   <transition-group name="list" tag="label">
-
-  <label class="btn btn-default btn-filter button-label"
-    :key="filter.Long+':'+ TagGroup.TagGroup.type"
-    @mouseenter="hoverclass=true"
-    @mouseleave="hoverclass=false"
-
-   v-if="FILTERS[TagGroup.TagGroup.type].indexOf(filter.Long)> -1">
-    <input type="checkbox"
-    class="hidden-checkbox"
-     :value="filter.Long"
-     v-model="FILTERS[TagGroup.TagGroup.type]"
-     @change="updateFilter"/>
-     <transition name="fade">
-       <i key="check" class="fawidth fa" :class="{
-         'fa-check-square-o': !hoverclass,
-         'fa-square-o': hoverclass,
-         'empty': hoverclass
-         }" />
-       </transition>
-    {{TagGroup.TagGroup.type | tagType}} {{ filter.Long }}
- </label>
-</transition-group>
+    <label
+      class="btn btn-default btn-filter button-label"
+      :key="filter.Long + ':' + TagGroup.TagGroup.type"
+      @mouseenter="hoverclass = true"
+      @mouseleave="hoverclass = false"
+      v-if="FILTERS[TagGroup.TagGroup.type].indexOf(filter.Long) > -1"
+    >
+      <input
+        type="checkbox"
+        class="hidden-checkbox"
+        :value="filter.Long"
+        v-model="FILTERS[TagGroup.TagGroup.type]"
+        @change="updateFilter"
+      />
+      <transition name="fade">
+        <i
+          key="check"
+          class="fawidth fa"
+          :class="{
+            'fa-check-square-o': !hoverclass,
+            'fa-square-o': hoverclass,
+            empty: hoverclass
+          }"
+        />
+      </transition>
+      {{ TagGroup.TagGroup.type | tagType }} {{ filter.Long }}
+    </label>
+  </transition-group>
 </template>
 <script>
 require("font-awesome-webpack!../../font-awesome.config.js");
 export default {
-  name: 'TagLabel',
-  props: ['filter', 'FILTERS', 'TagGroup'],
-  mounted () {},
+  name: "TagLabel",
+  props: ["filter", "FILTERS", "TagGroup"],
+  mounted() {},
   data: () => {
     return {
       show: false,
@@ -36,20 +42,20 @@ export default {
     };
   },
   filters: {
-    tagType (tagname) {
+    tagType(tagname) {
       var tagType;
       switch (tagname) {
-        case 'Specifications':
-          tagType = 'Spec:';
+        case "Specifications":
+          tagType = "Spec:";
           break;
-        case 'Error Level':
-          tagType = '';
+        case "Error Level":
+          tagType = "";
           break;
-        case 'Error type':
-          tagType = 'Type:';
+        case "Error type":
+          tagType = "Type:";
           break;
-        case 'Editorial constraints':
-          tagType = 'Editorial:';
+        case "Editorial constraints":
+          tagType = "Editorial:";
           break;
         default:
           tagType = tagname;
@@ -58,8 +64,8 @@ export default {
     }
   },
   methods: {
-    updateFilter (e) {
-      this.$store.commit('filter', this.FILTERS);
+    updateFilter() {
+      this.$store.commit("filter", this.FILTERS);
     }
   }
 };
@@ -67,17 +73,16 @@ export default {
 
 <style lang="less" scoped="true">
 .bg {
-  padding:0 4px 0 4px;
+  padding: 0 4px 0 4px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
-
 }
 .fawidth {
   width: 11px;
@@ -87,11 +92,11 @@ export default {
   opacity: 0.5;
 }
 label.bolder {
-    font-weight: bold;
-    color: #3d3d3d;
+  font-weight: bold;
+  color: #3d3d3d;
 }
 label.disabled {
-  color: #5c5c5c
+  color: #5c5c5c;
 }
 
 .float-left {
@@ -100,9 +105,9 @@ label.disabled {
 .btn-filter {
   margin-right: 3px;
   margin-bottom: 2px;
-  font-size:84%;
-  cursor:pointer;
-  padding:0;
+  font-size: 84%;
+  cursor: pointer;
+  padding: 0;
 }
 .button-label {
   font-weight: normal;
@@ -125,8 +130,9 @@ label.disabled {
   margin-right: 10px;
   max-width: 400px;
 }
-.list-enter-active, .list-leave-active {
-  transition: all .5s;
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s;
 }
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
   opacity: 0;
@@ -139,7 +145,7 @@ label.disabled {
 .push-enter,
 .push-leave-to
 /* .fade-leave-active in <2.1.8 */
-{
+ {
   opacity: 0;
   max-height: 0;
   overflow: hidden;

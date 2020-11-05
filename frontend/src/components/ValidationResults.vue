@@ -1,6 +1,6 @@
 <template>
   <div class="result-list">
-    <FileInformation :rawReport="rawReport"/>
+    <FileInformation :rawReport="rawReport" />
 
     <div class="panel panel-success" v-if="filtered.length === 0">
       <div class="panel-heading">
@@ -14,7 +14,8 @@
             </div>
 
             <p>
-              Your file has been successfully checked for semantic and technical validity.
+              Your file has been successfully checked for semantic and technical
+              validity.
             </p>
             <p v-if="filtered.length === 0 && report.length === 0">
               No errors have been reported.
@@ -27,8 +28,14 @@
       </div>
     </div>
     <transition-group name="list" tag="div" mode="in-out">
-      <template v-for="(item,index) in filtered" v-if="filtered.length > 0">
-        <ValidationResult :FILTERS="FILTERS" :ErrorIndex="item.uuid" :key="item.uuid" :errorCategory="item.errorCategory"/>
+      <template v-for="item in filtered">
+        <ValidationResult
+          :FILTERS="FILTERS"
+          v-if="filtered.length > 0"
+          :ErrorIndex="item.uuid"
+          :key="item.uuid"
+          :errorCategory="item.errorCategory"
+        />
       </template>
     </transition-group>
   </div>
@@ -39,8 +46,8 @@ import ValidationResult from "./ValidationResult.vue";
 import FileInformation from "./FileInformation.vue";
 
 export default {
-  name: 'validation-results',
-  props: ['report', "filtered", "rawReport", "FILTERS"],
+  name: "validation-results",
+  props: ["report", "filtered", "rawReport", "FILTERS"],
   components: {
     ValidationResult,
     FileInformation
@@ -50,31 +57,32 @@ export default {
 
 <style scoped="true" lang="less">
 .col-xs-12 > .circle-loader {
-  margin:0 .5em 0 0;
+  margin: 0 0.5em 0 0;
 }
 .list-item {
 }
 .list-move {
   transition: transform 0.5s;
 }
-.list-enter-active, .list-leave-active {
-  display:block;
+.list-enter-active,
+.list-leave-active {
+  display: block;
   transition: all 0.5s ease-in-out;
 }
-.list-enter{
-  transform: translate3d(-100%,0, 0);
+.list-enter {
+  transform: translate3d(-100%, 0, 0);
 }
 .list-leave-to {
   // opacity: 0;
   // max-height: 0;
-  transform: translate3d(100%,0, 500px);
+  transform: translate3d(100%, 0, 500px);
 }
 
 @brand-success: #5cb85c;
 @loader-size: 4em;
-@check-height: @loader-size/2;
-@check-width: @check-height/2;
-@check-left: (@loader-size/6 + @loader-size/12);
+@check-height: @loader-size / 2;
+@check-width: @check-height / 2;
+@check-left: (@loader-size / 6 + @loader-size / 12);
 @check-thickness: 2px;
 @check-color: @brand-success;
 
@@ -104,7 +112,6 @@ export default {
 .checkmark {
   display: block;
 
-
   &.draw:after {
     // animation-delay: 2s;
     animation-duration: 2.5s;
@@ -120,7 +127,7 @@ export default {
     transform-origin: left top;
     border-right: @check-thickness solid @check-color;
     border-top: @check-thickness solid @check-color;
-    content: '';
+    content: "";
     left: @check-left;
     top: @check-height;
     position: absolute;
@@ -148,5 +155,4 @@ export default {
     opacity: 1;
   }
 }
-
 </style>

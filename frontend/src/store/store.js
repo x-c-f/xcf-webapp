@@ -27,8 +27,8 @@ export const store = new Vuex.Store({
           const type2 = "Error Level";
           const val2 = spec.errorLevel;
           const val = spec.nameAcronym;
-          its[type] = its.hasOwnProperty(type) ? its[type] : {};
-          its[type2] = its.hasOwnProperty(type2) ? its[type2] : {};
+          its[type] = its[type] ? its[type] : {};
+          its[type2] = its[type2] ? its[type2] : {};
 
           its[type][val] = its[type][val] ? its[type][val] + 1 : 1;
           its[type2][val2] = its[type2][val2] + 1 || 1;
@@ -43,11 +43,10 @@ export const store = new Vuex.Store({
       if (state.tags.Tags) {
         state.tags.Tags.forEach(tg => {
           tg.TagGroup.TagList.forEach((tl, i) => {
-            let foo = its && its.hasOwnProperty(tg.TagGroup.type) && its[tg.TagGroup.type].hasOwnProperty(tl.Long) ? its[tg.TagGroup.type][tl.Long] : 0;
+            let foo = its && its[tg.TagGroup.type] && its[tg.TagGroup.type][tl.Long] ? its[tg.TagGroup.type][tl.Long] : 0;
             Vue.set(tg.TagGroup.TagList, i,
               Object.assign({},
-                tl,
-                {
+                tl, {
                   "count": foo,
                   "disabled": foo === 0
                 }
@@ -79,28 +78,30 @@ export const store = new Vuex.Store({
     }
   },
   actions: {
-    report: ({commit, state}, report) => {
+    report: ({
+      commit
+    }, report) => {
       commit("rawReport", report);
       commit("report", report.report);
     }
   },
   mutations: {
-    filter (state, payload) {
+    filter(state, payload) {
       state.FILTERS = payload;
     },
-    tabForError (state, payload) {
+    tabForError(state, payload) {
       state.tabForError = Object.assign({}, state.tabForError, payload);
     },
-    setActive (state, payload) {
+    setActive(state, payload) {
       state.activeTab = payload;
     },
-    tags (state, payload) {
+    tags(state, payload) {
       state.tags = payload;
     },
-    report (state, payload) {
+    report(state, payload) {
       state.report = payload;
     },
-    rawReport (state, payload) {
+    rawReport(state, payload) {
       state.rawReport = payload;
     }
   }
